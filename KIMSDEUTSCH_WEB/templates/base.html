@@ -1,0 +1,74 @@
+{% comment %} 기본 레이아웃 {% endcomment %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% comment %} Logo_icon {% endcomment %}
+    <link rel="icon" href="{% static 'icons/example_tablogo.png' %}" type="image/png">
+    {% comment %} Swiper CSS {% endcomment %}
+    <link rel="stylesheet" href="{% static 'css/swiper-bundle.min.css' %}">
+    {% comment %} Tailwind CSS {% endcomment %}
+    <link rel="stylesheet" href="{% static 'dist/output.css' %}">
+    <title>{% block title %}KimDeutsch{% endblock %}</title>
+  </head>
+  <body class="font-noto">
+    
+    <div class="max-w-screen-xl mx-auto w-full my-5 px-5 sm:px-6 lg:px-8 py-8 shadow-2xl rounded-xl ">
+      
+      {% comment %} 로고 + 네비게이션 {% endcomment %}
+      <header class="font-semibold">
+        <nav class="flex justify-between">
+          <a class="text-5xl" href="{% url 'main' %}">KimsDeutsch</a>
+          <div class="grid grid-cols-2 gap-10 items-center text-lg">
+            <div class="flex gap-4">
+              <a class="px-2 py-1 transition duration-250 transform active:scale-[0.8] active:translate-y-[4px]" href="#">소개</a>
+              <a class="px-2 py-1 transition duration-250 transform active:scale-[0.8] active:translate-y-[4px]" href="{% url 'course_list' %}">강의실</a>
+              <a class="px-2 py-1 transition duration-250 transform active:scale-[0.8] active:translate-y-[4px]" href="#">프로필</a>
+            </div>
+            <div class="flex gap-4">
+              <a class="border-2 border-mainblue text-mainblue px-2 py-0.5 rounded-lg transition transform duration-200 active:translate-y-[4px] active:scale-[0.8] shadow-lg active:shadow-none" href="#">로그인</a>
+              <a class="border-2 border-mainblue text-mainblue px-2 py-0.5 rounded-lg transition transform duration-200 active:translate-y-[4px] active:scale-[0.8] shadow-lg active:shadow-none" href="{% url 'user_signup'%}">회원가입</a>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      {% comment %} 컨텐츠 {% endcomment %}
+      {% block content %}
+      {% endblock %}
+
+    </div>
+
+    {% comment %} Swiper JS {% endcomment %}
+    <script src="{% static 'js/swiper-bundle.min.js' %}"></script>
+    <script>
+      const swiper = new Swiper(".mySwiper", {
+        loop: true,
+        slidesPerView: 3,
+        slidesPerGroup: 1,
+        spaceBetween: 20,
+        speed: 1000,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        autoplay: {
+          delay: 2000,
+        },
+        breakpoints: {
+          0: {
+            slidesPerView: 1
+          },
+          640: {
+            slidesPerView: 2
+          },
+          1024: {
+            slidesPerView: 3
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
