@@ -6,7 +6,7 @@
 <main>
 
   {% comment %} 메인페이지 첫번째 섹션 {% endcomment %}
-  <section class="mx-auto w-full mt-[130px] text-center">
+  <section class="text-center">
 
     <h1 class="text-6xl font-bold leading-normal">
       Deutsch lernen<br>
@@ -34,7 +34,7 @@
   
 
   {% comment %} 메인페이지 두번째 섹션 {% endcomment %}
-  <section class="mt-[100px] mx-auto w-full flex justify-center gap-[100px]">
+  <section class="mt-[100px] flex justify-center gap-[100px]">
 
     {% comment %} 강의 특성 카드_01 {% endcomment %}
     <div class="flex flex-col items-center text-center p-6 bg-gray-50 rounded-xl">
@@ -60,7 +60,7 @@
   </section>
   
   {% comment %} 메인페이지 세번째 섹션 {% endcomment %}
-  <section class="mx-auto w-full mt-[100px] mb-5">
+  <section class="mt-[100px]">
     
     {% comment %} 섹션 제목 {% endcomment %}
     <div class="flex items-center ml-8">
@@ -174,10 +174,14 @@
       </div>
       
     </div>
+
+    <div class="relative mt-4">
+      <a class="absolute right-[30px] text-lg font-semibold border-2 border-mainblue text-mainblue px-3 py-1 rounded-lg transition transform duration-200 hover:bg-mainblue hover:text-white" href="{% url 'course_list' %}">전체 강의 보러가기</a>
+    </div>
   </section>
   
   {% comment %} 메인페이지 네번째 섹션 {% endcomment %}
-  <section class="mx-auto w-full mt-[100px] mb-5 px-[22px]">
+  <section class="mt-[120px] mb-5 px-[22px]">
 
     {% comment %} 섹션 제목 {% endcomment %}
     <div class="flex items-center ml-3">

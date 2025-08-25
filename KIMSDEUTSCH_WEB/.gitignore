@@ -17,3 +17,11 @@ node_modules/
 .env
 *.sqlite3
 db.sqlite3
+
+#media/
+*.mp4
+*.mov
+*.jpg
+*.pdf
+*.png
+*.gif

@@ -1,10 +1,16 @@
-<h2>강의실 페이지</h2>
+{% extends 'base.html'%} {% comment %} 기본 레이아웃 {% endcomment %}
+{% load static %}
+
+{% comment %} 강의 페이지 내용 {% endcomment %}
+{% block content %}
 
 <a href="{% url 'course_create' %}">강의 업로드</a>
 
 {% for course in course_all %}
-  {% if course.thumbnail_image %}
-    <img src="{{ course.thumbnail_image.url }}" alt="{{ course.title }}" />
-  {% endif %}
-  <h2>{{ course.title }}</h2>
+{% if course.thumbnail_image %}
+<img src="{{ course.thumbnail_image.url }}" alt="{{ course.title }}" />
+{% endif %}
+<h2>{{ course.title }}</h2>
 {% endfor %}
+
+{% endblock %}
