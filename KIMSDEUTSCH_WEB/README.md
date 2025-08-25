@@ -1,4 +1,4 @@
-# 🇩🇪 KIMSDEUTSCH_WEB – "KimsDeutsch"의 독일어 강의 플랫폼
+# KIMSDEUTSCH_WEB – "KimsDeutsch"의 독일어 강의 플랫폼
 
 **KIMSDEUTSCH_WEB**은 Django 프레임워크를 기반으로 개발된 독일어 온라인 강의 웹 애플리케이션입니다.  
 학습자들이 단어, 문법, 미디어 자료 등을 효율적으로 학습하고 관리할 수 있도록 설계되었습니다.
