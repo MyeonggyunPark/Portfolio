@@ -23,6 +23,7 @@ class Level(models.Model):
 class Theme(models.Model):
     
     THEME_CHOICES = [
+        ("NONE", "Normaler Kurs(일반강의)"),
         ("GRAMMAR", "Grammatik(문법)"),
         ("READING", "Lesen(읽기)"),
         ("LISTENING", "Hören(듣기)"),
