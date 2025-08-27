@@ -46,10 +46,24 @@
     </div>
     
     {% comment %} 문의하기 버튼 {% endcomment %}
-    <a class="fixed bottom-10 right-4 z-50 sm:right-auto sm:left-1/2 sm:translate-x-[calc(320px+16px)] md:translate-x-[calc(384px)] lg:translate-x-[calc(512px)] xl:translate-x-[calc(640px)] 2xl:translate-x-[calc(668px)]" 
-      href="https://forms.gle/gnMc2ZfnkwuNRczX8" target="_blank">
-      <img class="size-[70px] border-4 border-mainyellow rounded-[20px]" src="{% static 'icons/question.png'%}" alt="question">
+    <a class="fixed top-9/10 -translate-y-1/2 z-50 left-1/2 translate-x-[calc(min(50vw,_640px)_+_10px)]
+              size-[70px] hover:w-[200px] rounded-[20px] border-4 border-mainyellow bg-white
+              transition-all duration-300 overflow-hidden group"
+        href="https://forms.gle/gnMc2ZfnkwuNRczX8" target="_blank" rel="noopener" aria-label="문의하기">
+
+      <div class="relative w-full h-full">
+        <div class="absolute left-0 top-0 h-full w-[65px] grid place-items-center bg-mainblue">
+          <img class="size-[55px] transform -translate-x-[1px] transition-none"
+              src="{% static 'icons/question.png' %}" alt="문의하기">
+        </div>
+
+        <span class="absolute inset-y-0 left-[85px] flex items-center pr-4 text-mainblue text-2xl font-semibold 
+                    whitespace-nowrap opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+          문의하기
+        </span>
+      </div>
     </a>
+
     {% comment %} Swiper JS {% endcomment %}
     <script src="{% static 'js/swiper-bundle.min.js' %}"></script>
     <script>
