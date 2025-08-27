@@ -39,8 +39,17 @@
       {% block content %}
       {% endblock %}
 
+      
+      {% comment %} 푸터 {% endcomment %}
+      <footer></footer>
+      
     </div>
-
+    
+    {% comment %} 문의하기 버튼 {% endcomment %}
+    <a class="fixed bottom-10 right-4 z-50 sm:right-auto sm:left-1/2 sm:translate-x-[calc(320px+16px)] md:translate-x-[calc(384px)] lg:translate-x-[calc(512px)] xl:translate-x-[calc(640px)] 2xl:translate-x-[calc(668px)]" 
+      href="https://forms.gle/gnMc2ZfnkwuNRczX8" target="_blank">
+      <img class="size-[70px] border-4 border-mainyellow rounded-[20px]" src="{% static 'icons/question.png'%}" alt="question">
+    </a>
     {% comment %} Swiper JS {% endcomment %}
     <script src="{% static 'js/swiper-bundle.min.js' %}"></script>
     <script>
