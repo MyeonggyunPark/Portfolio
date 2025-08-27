@@ -19,9 +19,4 @@ node_modules/
 db.sqlite3
 
 #media/
-*.mp4
-*.mov
-*.jpg
-*.pdf
-*.png
-*.gif
+media/
