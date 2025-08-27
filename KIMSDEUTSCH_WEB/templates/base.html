@@ -15,25 +15,28 @@
   </head>
   <body class="font-noto">
     
+    {% comment %} 전체 카드 영역 {% endcomment %}
     <div class="max-w-screen-xl mx-auto w-full my-5 px-5 sm:px-6 lg:px-8 py-8 shadow-2xl rounded-xl ">
       
       {% comment %} 로고 + 네비게이션 {% endcomment %}
       <header class="font-semibold">
-        <nav class="flex justify-between mb-[130px]">
+        <nav class="flex justify-between">
           <a class="text-5xl" href="{% url 'main' %}">KimsDeutsch</a>
-          <div class="grid grid-cols-2 gap-10 items-center text-lg">
-            <div class="flex gap-4">
-              <a class="px-2 py-1 transition duration-250 transform active:scale-[0.8] active:translate-y-[4px]" href="#">소개</a>
-              <a class="px-2 py-1 transition duration-250 transform active:scale-[0.8] active:translate-y-[4px]" href="{% url 'course_list' %}">클래스</a>
-              <a class="px-2 py-1 transition duration-250 transform active:scale-[0.8] active:translate-y-[4px]" href="#">프로필</a>
+          <div class="grid grid-cols-2 gap-15 text-lg">
+            <div class="flex items-end gap-4">
+              <a class="px-2 pt-1 transition duration-250 transform active:scale-[0.8] active:translate-y-[4px]" href="#">소개</a>
+              <a class="px-2 pt-1 transition duration-250 transform active:scale-[0.8] active:translate-y-[4px]" href="{% url 'course_list' %}">클래스</a>
+              <a class="px-2 pt-1 transition duration-250 transform active:scale-[0.8] active:translate-y-[4px]" href="#">프로필</a>
             </div>
-            <div class="flex gap-4">
+            <div class="grid grid-cols-2 gap-4 items-center text-center">
               <a class="border-2 border-mainblue text-mainblue px-2 py-1 rounded-lg transition duration-200 hover:bg-mainblue hover:text-white" href="#">로그인</a>
               <a class="border-2 border-mainblue text-mainblue px-2 py-1 rounded-lg transition duration-200 hover:bg-mainblue hover:text-white" href="{% url 'user_signup'%}">회원가입</a>
             </div>
           </div>
         </nav>
       </header>
+
+      <hr class="mt-[20px] mb-[130px] border-2 border-mainblue">
 
       {% comment %} 컨텐츠 {% endcomment %}
       {% block content %}
