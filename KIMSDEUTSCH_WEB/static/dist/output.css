@@ -7,11 +7,9 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --color-red-500: oklch(63.7% 0.237 25.331);
-    --color-yellow-50: oklch(98.7% 0.026 102.212);
-    --color-yellow-300: oklch(90.5% 0.182 98.111);
-    --color-yellow-500: oklch(79.5% 0.184 86.047);
     --color-gray-50: oklch(98.5% 0.002 247.839);
+    --color-gray-100: oklch(96.7% 0.003 264.542);
+    --color-gray-500: oklch(55.1% 0.027 264.364);
     --color-gray-600: oklch(44.6% 0.03 256.802);
     --color-gray-700: oklch(37.3% 0.034 259.733);
     --color-black: #000;
@@ -34,6 +32,7 @@
     --font-weight-bold: 700;
     --leading-tight: 1.25;
     --leading-normal: 1.5;
+    --radius-md: 0.375rem;
     --radius-lg: 0.5rem;
     --radius-xl: 0.75rem;
     --animate-bounce: bounce 1s infinite;
@@ -279,9 +278,6 @@
   .mt-\[20px\] {
     margin-top: 20px;
   }
-  .mt-\[30px\] {
-    margin-top: 30px;
-  }
   .mt-\[50px\] {
     margin-top: 50px;
   }
@@ -290,6 +286,9 @@
   }
   .mt-\[120px\] {
     margin-top: 120px;
+  }
+  .mt-\[130px\] {
+    margin-top: 130px;
   }
   .mr-1 {
     margin-right: calc(var(--spacing) * 1);
@@ -306,14 +305,14 @@
   .mb-10 {
     margin-bottom: calc(var(--spacing) * 10);
   }
-  .mb-\[10px\] {
-    margin-bottom: 10px;
-  }
   .mb-\[20px\] {
     margin-bottom: 20px;
   }
-  .mb-\[130px\] {
-    margin-bottom: 130px;
+  .mb-\[40px\] {
+    margin-bottom: 40px;
+  }
+  .ml-2 {
+    margin-left: calc(var(--spacing) * 2);
   }
   .ml-3 {
     margin-left: calc(var(--spacing) * 3);
@@ -364,14 +363,26 @@
     width: 70px;
     height: 70px;
   }
+  .h-\[50px\] {
+    height: 50px;
+  }
   .h-\[450px\] {
     height: 450px;
+  }
+  .h-\[500px\] {
+    height: 500px;
   }
   .h-full {
     height: 100%;
   }
+  .w-\[50px\] {
+    width: 50px;
+  }
   .w-\[65px\] {
     width: 65px;
+  }
+  .w-\[500px\] {
+    width: 500px;
   }
   .w-full {
     width: 100%;
@@ -440,6 +451,9 @@
   .gap-0\.5 {
     gap: calc(var(--spacing) * 0.5);
   }
+  .gap-2 {
+    gap: calc(var(--spacing) * 2);
+  }
   .gap-3 {
     gap: calc(var(--spacing) * 3);
   }
@@ -448,6 +462,9 @@
   }
   .gap-5 {
     gap: calc(var(--spacing) * 5);
+  }
+  .gap-6 {
+    gap: calc(var(--spacing) * 6);
   }
   .gap-10 {
     gap: calc(var(--spacing) * 10);
@@ -465,9 +482,6 @@
       margin-inline-end: calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-x-reverse)));
     }
   }
-  .self-end {
-    align-self: flex-end;
-  }
   .overflow-hidden {
     overflow: hidden;
   }
@@ -476,6 +490,9 @@
   }
   .rounded-lg {
     border-radius: var(--radius-lg);
+  }
+  .rounded-md {
+    border-radius: var(--radius-md);
   }
   .rounded-xl {
     border-radius: var(--radius-xl);
@@ -492,6 +509,10 @@
     border-style: var(--tw-border-style);
     border-width: 4px;
   }
+  .border-b-2 {
+    border-bottom-style: var(--tw-border-style);
+    border-bottom-width: 2px;
+  }
   .border-black {
     border-color: var(--color-black);
   }
@@ -501,29 +522,29 @@
   .border-mainyellow {
     border-color: var(--color-mainyellow);
   }
-  .border-red-500 {
-    border-color: var(--color-red-500);
-  }
-  .border-yellow-50 {
-    border-color: var(--color-yellow-50);
-  }
-  .border-yellow-300 {
-    border-color: var(--color-yellow-300);
-  }
-  .border-yellow-500 {
-    border-color: var(--color-yellow-500);
-  }
   .bg-gray-50 {
     background-color: var(--color-gray-50);
+  }
+  .bg-gray-100 {
+    background-color: var(--color-gray-100);
   }
   .bg-mainblue {
     background-color: var(--color-mainblue);
   }
+  .bg-mainyellow {
+    background-color: var(--color-mainyellow);
+  }
   .bg-white {
     background-color: var(--color-white);
   }
+  .object-contain {
+    object-fit: contain;
+  }
   .p-1 {
     padding: calc(var(--spacing) * 1);
+  }
+  .p-2 {
+    padding: calc(var(--spacing) * 2);
   }
   .p-6 {
     padding: calc(var(--spacing) * 6);
@@ -560,6 +581,9 @@
   }
   .pr-4 {
     padding-right: calc(var(--spacing) * 4);
+  }
+  .pb-5 {
+    padding-bottom: calc(var(--spacing) * 5);
   }
   .text-center {
     text-align: center;
@@ -622,6 +646,9 @@
   .whitespace-nowrap {
     white-space: nowrap;
   }
+  .text-gray-500 {
+    color: var(--color-gray-500);
+  }
   .text-gray-600 {
     color: var(--color-gray-600);
   }
@@ -633,6 +660,9 @@
   }
   .text-mainyellow {
     color: var(--color-mainyellow);
+  }
+  .text-white {
+    color: var(--color-white);
   }
   .underline {
     text-decoration-line: underline;
