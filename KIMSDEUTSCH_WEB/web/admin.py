@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import *
+from .models import Level, Theme, ExamType, CourseMaterial
 
 # Register your models here.
 
