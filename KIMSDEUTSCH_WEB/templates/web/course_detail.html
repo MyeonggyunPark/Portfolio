@@ -1,1 +1,19 @@
-<h3>강의 내용</h3>
+{% extends 'base.html'%} {% comment %} 기본 레이아웃 {% endcomment %}
+{% load static %}
+
+{% comment %} 강의 상세 페이지 내용 {% endcomment %}
+{% block content %}
+
+<main class="mt-[100px]">
+  
+  <section>
+    <video controls class="w-full h-[500px] object-contain"> 
+      <source src="{{ course.video_file.url }}" type="video/mp4">
+    </video>
+    <p>{{ course.title }}</p>
+    <p>{{ course.content }}</p>
+  </section>
+  
+</main>
+
+{% endblock %}
