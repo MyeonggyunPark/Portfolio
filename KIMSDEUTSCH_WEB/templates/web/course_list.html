@@ -3,14 +3,99 @@
 
 {% comment %} 강의 페이지 내용 {% endcomment %}
 {% block content %}
+<main class="mt-[100px]">
+  
+  {% comment %} 강의 목록 필터 섹션 {% endcomment %}
+  <section class="text-center mb-[40px] flex flex-col items-center">
+
+    {% comment %} 강의 목록 1차 필터 {% endcomment %}
+    <div class="flex justify-center gap-10 text-xl font-semibold border-b-2 border-black w-[500px] pb-5">
+      <a href="{% url 'course_list' %}" class="{% if not selected_filter %}bg-mainblue text-white{% else %}bg-white{% endif %} p-2 rounded-md">전체</a>
+      <a href="?filter=level" class="{% if selected_filter == 'level' %}bg-mainblue text-white{% else %}bg-white{% endif %} p-2 rounded-md">레벨</a>
+      <a href="?filter=theme" class="{% if selected_filter == 'theme' %}bg-mainblue text-white{% else %}bg-white{% endif %} p-2 rounded-md">테마</a>
+      <a href="?filter=exam" class="{% if selected_filter == 'exam' %}bg-mainblue text-white{% else %}bg-white{% endif %} p-2 rounded-md">시험</a>
+    </div>
+    
+    {% comment %} 강의 목록 2차 필터 {% endcomment %}        
+    <div class="h-[50px] flex justify-center items-center mt-5">
+      {% if selected_filter == 'level' %}
+        <div class="flex gap-6">
+          {% for level in levels %}
+            <a href="?filter=level&level={{ level.level_code }}"
+              class="{% if selected_level == level.level_code %}bg-mainyellow text-white{% else %}bg-white{% endif %} px-3 py-1 rounded-md border">
+              {{ level.level_code }}
+            </a>
+          {% endfor %}
+        </div>
+      {% elif selected_filter == 'theme' %}
+        <div class="flex gap-6">
+          {% for theme in themes %}
+            <a href="?filter=theme&theme={{ theme.theme_code }}"
+              class="{% if selected_theme == theme.theme_code %}bg-mainyellow text-white{% else %}bg-white{% endif %} px-3 py-1 rounded-md border">
+              {{ theme.theme_label }}
+            </a>
+          {% endfor %}
+        </div>
+      {% elif selected_filter == 'exam' %}
+        <div class="flex gap-6">
+          {% for exam in exams %}
+            <a href="?filter=exam&exam={{ exam.exam_code }}"
+              class="{% if selected_exam == exam.exam_code %}bg-mainyellow text-white{% else %}bg-white{% endif %} px-3 py-1 rounded-md border text-nowrap">
+              {{ exam.exam_label }}
+            </a>
+          {% endfor %}
+        </div>
+      {% else %}
+        {% comment %} filter가 전체일 때는 빈 공간 {% endcomment %}
+        <div></div>
+      {% endif %}
+    </div>
+
+  </section>
+  
+  {% comment %} 강의 목록 섹션 {% endcomment %}
+  <section class="grid grid-cols-4 gap-5">
+    
+    {% comment %} 강의 카드 {% endcomment %}
+    {% for course in courses %}    
+    <a href="{% url 'course_detail' course.pk %}">
+      <div class="mb-[20px] flex flex-col bg-gray-100 rounded-lg p-2">
+        
+        {% comment %} 강의 썸네임 {% endcomment %}
+        {% if course.thumbnail_image %}
+        <img class="rounded-lg" src="{{ course.thumbnail_image.url }}" alt="{{ course.title }}">
+        {% endif %}
+        
+        {% comment %} 강의 제목, 강의 레벨, 강의 유형 {% endcomment %}
+        <div class="mt-5 ml-2 flex flex-col gap-5">
+          <h3 class="text-2xl font-semibold">{{ course.title }}</h3>
+          
+          <div class="flex flex-col gap-2">
+            {% for level in course.levels.all %}
+            <span class="text-center text-xl bg-mainblue text-white font-semibold w-[50px] rounded-md">
+            {{ level.level_code }}
+            </span>
+            {% endfor %}
+            <div>
+            {% for theme in course.themes.all %}
+            <span class="text-lg text-gray-500 font-semibold">{{ theme.theme_label }}</span>
+              {% if not forloop.last %}
+              <span class="text-md text-gray-500 font-semibold">/</span>
+              {% endif %}
+            {% endfor %}
+            </div>
+          </div>
+        
+        </div>
+      </div>
+    </a>
+    {% endfor %}
+
+
+  </section>
+  
+</main>
 
 <a href="{% url 'course_create' %}">강의 업로드</a>
-
-{% for course in course_all %}
-{% if course.thumbnail_image %}
-<img src="{{ course.thumbnail_image.url }}" alt="{{ course.title }}" />
-{% endif %}
-<h2>{{ course.title }}</h2>
-{% endfor %}
 
 {% endblock %}
