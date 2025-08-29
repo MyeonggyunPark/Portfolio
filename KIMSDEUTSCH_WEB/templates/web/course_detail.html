@@ -6,6 +6,15 @@
 
 <main class="mt-[100px]">
   
+  <div class="mb-5 flex gap-5">
+    <a class="border-2 border-mainblue text-mainblue text-2xl font-semibold" href="{% url 'course_list' %}">강의 목록</a>
+    <a class="border-2 border-mainblue text-mainblue text-2xl font-semibold" href="{% url 'course_update' course.pk %}">강의 수정</a>
+    <form action="{% url 'course_delete' course.pk %}" method="post" onsubmit="return confirm('정말 삭제할까요?');">
+      {% csrf_token %}
+      <button class="border-2 border-mainblue text-mainblue text-2xl font-semibold cursor-pointer" type="submit">강의 삭제</button>
+    </form>
+  </div>
+  
   <section>
     <video controls class="w-full h-[500px] object-contain"> 
       <source src="{{ course.video_file.url }}" type="video/mp4">
@@ -13,7 +22,7 @@
     <p>{{ course.title }}</p>
     <p>{{ course.content }}</p>
   </section>
-  
+
 </main>
 
 {% endblock %}
