@@ -14,9 +14,9 @@ def course_list(request):
     theme = request.GET.get("theme")
     exam = request.GET.get("exam")
     filter_type = request.GET.get("filter")
-    
+
     courses = CourseMaterial.objects.all()
-    
+
     if level:
         courses = courses.filter(levels__level_code=level)
 
@@ -25,19 +25,18 @@ def course_list(request):
 
     if exam:
         courses = courses.filter(exams__exam_code=exam)
-    
+
     context = {
         "courses": courses,
         "levels": Level.objects.all(),
         "themes": Theme.objects.all(),
         "exams": ExamType.objects.all(),
-        
         "selected_level": level,
         "selected_theme": theme,
         "selected_exam": exam,
         "selected_filter": filter_type,
-        }
-    
+    }
+
     return render(request, "web/course_list.html", context)
 
 # 강의 업로드 페이지
@@ -52,7 +51,6 @@ def course_create(request):
             form.save()
             return redirect("course_list")
         else:
-            form = MaterialForm()
             context = {"form": form}
             return render(request, "web/course_create.html", context)
 
@@ -63,4 +61,29 @@ def course_detail(request, pk):
     return render(request, "web/course_detail.html", context)
 
 # 강의 수정 페이지
+def course_update(request, pk):
+    course = get_object_or_404(CourseMaterial, pk=pk)
+
+    if request.method == "POST":
+        form = MaterialForm(request.POST, request.FILES, instance=course)
+        if form.is_valid():
+            form.save()
+            return redirect("course_list")
+        else:
+            context = {"form": form}
+            return render(request, "web/course_update.html", context)
+    else:
+        form = MaterialForm(instance=course)
+        context = {"form": form}
+        return render(request, "web/course_update.html", context)
+
+
 # 강의 삭제 페이지
+def course_delete(request, pk):
+    course = get_object_or_404(CourseMaterial, pk=pk)
+    
+    if request.method == "POST":
+        course.delete()
+        return redirect("course_list")
+        
+    return redirect("course_list")
