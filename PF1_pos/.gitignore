@@ -1,20 +1,30 @@
-# Python-generated files
+# Python
 __pycache__/
-*.py[oc]
+*.py[cod]
+*.egg-info/
 build/
-dist/
-wheels/
-*.egg-info
 
-# Virtual environments
-.venv
-
-# VSCode settings
+# VS Code
 .vscode/
 
-# Django
+# Virtual environment
+.venv/
+
+# Node.js
+node_modules/
+
+# Django media uploads
+media/
+
+# Django Database & logs
 db.sqlite3
 *.log
 
-# OS files
+# System files
 .DS_Store
+Thumbs.db
+
+
+# Tailwind CSS
+dist/*
+!dist/output.css  # 예외적으로 output.css만 커밋
