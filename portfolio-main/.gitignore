@@ -1,0 +1,12 @@
+# Node.js dependencies
+node_modules/
+
+# Tailwind CSS build output
+dist/
+
+# macOS and Windows system files
+.DS_Store
+Thumbs.db
+
+
+
