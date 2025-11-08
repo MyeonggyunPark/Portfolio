@@ -29,13 +29,12 @@ During the Umschulung, I worked with the following technologies:
 Below is a list of projects I worked on individually or as part of a team during the training.  
 Each project is stored in its own folder with source code, documentation, and presentation materials if available.
 
-| Project Name | Description | Technologies |
-|--------------|-------------|--------------|
-|              |             |              |
-|              |             |              |
-|              |             |              |
-|              |             |              |
-|              |             |              |
+| Project Name | Description | Technologies | GitHub Link | 
+|--------------|-------------|--------------|--------------|
+|              |             |              |              |
+|              |             |              |              |
+|              |             |              |              |
+
 
 ## 🎯 Purpose of This Repository
 
