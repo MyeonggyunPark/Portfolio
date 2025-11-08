@@ -19,10 +19,10 @@ Throughout this program, I have built both theoretical knowledge and hands-on ex
 
 During the Umschulung, I worked with the following technologies:
 
-- **Programming Languages**: Python, HTML, CSS, JavaScript  
-- **Databases**: SQLite, MySQL, PostgreSQL  
-- **Tools**: Git, GitHub, VS Code  
-- **Frameworks / Libraries**: Django, TailwindCSS, Flask
+- **Programming Languages**: Python / HTML / CSS / JavaScript  
+- **Databases**: SQLite / MySQL / PostgreSQL  
+- **Tools**: Git / GitHub / VS Code  
+- **Frameworks**: Django / Flask / TailwindCSS
 
 ## 📁 Project Overview
 
