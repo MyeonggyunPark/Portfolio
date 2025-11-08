@@ -1,4 +1,4 @@
-# 📂 Portfolio
+# 💻 Portfolio
 
 Welcome to my project portfolio!  
 This repository documents the projects I worked on during my **career retraining (Umschulung) to become an Application Developer (Fachinformatiker*in für Anwendungsentwicklung)** in Germany.
