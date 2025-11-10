@@ -2,3 +2,9 @@
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-mainBlue:#38BDF8;
+  --color-pyBlue: #306998;
+  --color-pyYellow: #FFD43B;
+}
