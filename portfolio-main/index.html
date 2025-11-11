@@ -6,11 +6,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
+  <!-- Favicon for browser tab -->
   <link rel="icon" href="./src/static/images/favicon-laptop.svg" type="image/svg+xml">
   <title>Portfolio - Myeonggyun Park</title>
 
+  <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- EmailJS library for sending emails -->
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+  <!-- Toastify CSS & JS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+  <!-- Tailwind CSS output file -->
   <link rel="stylesheet" href="./dist/output.css">
+
+  <!-- Custom JavaScript file -->
   <script src="./src/main.js" defer></script>
 
   <!-- Offset anchor link targets to account for fixed header -->
@@ -427,7 +440,7 @@
           </a>
 
           <!-- Email Link -->
-          <a href="#" class="text-red-500 dark:text-gray-300 text-4xl md:text-2xl flex items-center">
+          <a href="mailto:audrbs92@gmail.com" class="text-red-500 dark:text-gray-300 text-4xl md:text-2xl flex items-center">
             <i class="fas fa-envelope"></i>
             <span class="hidden md:block text-lg text-gray-700 dark:text-gray-300 p-2 font-semibold dark:hover:text-mainBlue">audrbs92@gmail.com</span>
           </a>
