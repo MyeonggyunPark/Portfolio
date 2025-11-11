@@ -104,3 +104,46 @@ toggleBtnMobile.addEventListener("click", () => {
 
 // Initialize theme on page load (mobile)
 loadThemeMobile();
+
+// Initialize EmailJS
+emailjs.init("B1u9i2VsNzBg_HP00");
+
+// Handle form submission
+document.getElementById("contactForm").addEventListener("submit", function (e) {
+  e.preventDefault(); // // Prevent default form submission
+
+  emailjs.sendForm("service_qerzzjn", "template_coa02zt", this).then(
+    function () {
+      Toastify({
+        text: "✅ Your message has been sent successfully!",
+        duration: 4000,
+        gravity: "bottom",
+        position: "right",
+        backgroundColor: getComputedStyle(document.documentElement)
+          .getPropertyValue("--color-pyBlue")
+          .trim(),
+        style: {
+          borderRadius: "8px",
+          color: "#fff",
+          fontWeight: "500",
+        },
+      }).showToast();
+      e.target.reset(); // Reset the form
+    },
+    function (error) {
+      console.error("❌ Failed to send the message:", error);
+      Toastify({
+        text: "❌ Failed to send the message. Please try again later.",
+        duration: 4000,
+        gravity: "bottom",
+        position: "right",
+        backgroundColor: "#DC2626",
+        style: {
+          borderRadius: "8px",
+          color: "#fff",
+          fontWeight: "500",
+        },
+      }).showToast();
+    }
+  );
+});
