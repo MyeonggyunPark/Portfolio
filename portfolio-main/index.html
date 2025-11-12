@@ -245,38 +245,100 @@
 
         <!-- Project-Card-1 -->
         <article
-          class="bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
-          <img class="w-full h-48 object-cover"
-            src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=600"
+          class="group bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+          <img class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+            src="./src/static/media/pf1/pf1_scraper.png"
             alt="project-name">
           <div class="p-6">
-            <h3 class="text-[22px] font-semibold mb-4 text-gray-800 dark:text-gray-100">Project-name</h3>
+            <h3 class="text-[22px] font-semibold mb-4 text-gray-800 dark:text-gray-100">DevJobScraper</h3>
             <div class="space-x-2">
               <span
-                class="bg-gray-200 dark:bg-gray-700 text-xs font-semibold px-2 py-0.5 rounded-md text-gray-700 border dark:text-gray-300 border-gray-400 dark:border-gray-600">Python</span>
+                class="bg-gray-200 dark:bg-gray-700 text-sm font-semibold px-2 py-0.5 rounded-md text-gray-700 border dark:text-gray-300 border-gray-400 dark:border-gray-600">Python</span>
               <span
-                class="bg-gray-200 dark:bg-gray-700 text-xs font-semibold px-2 py-0.5 rounded-md text-gray-700 border dark:text-gray-300 border-gray-400 dark:border-gray-600">Python</span>
+                class="bg-gray-200 dark:bg-gray-700 text-sm font-semibold px-2 py-0.5 rounded-md text-gray-700 border dark:text-gray-300 border-gray-400 dark:border-gray-600">Flask</span>
               <span
-                class="bg-gray-200 dark:bg-gray-700 text-xs font-semibold px-2 py-0.5 rounded-md text-gray-700 border dark:text-gray-300 border-gray-400 dark:border-gray-600">Python</span>
-              <span
-                class="bg-gray-200 dark:bg-gray-700 text-xs font-semibold px-2 py-0.5 rounded-md text-gray-700 border dark:text-gray-300 border-gray-400 dark:border-gray-600">Python</span>
+                class="bg-gray-200 dark:bg-gray-700 text-sm font-semibold px-2 py-0.5 rounded-md text-gray-700 border dark:text-gray-300 border-gray-400 dark:border-gray-600">TailwindCSS</span>
             </div>
-            <div class="space-x-4 mt-10 flex justify-start">
+            <div class="space-x-6 md:space-x-4 mt-10 flex justify-start">
+              <!-- Desription Modal Button -->
+              <button id="openModalBtn" type="button"
+                class="bg-amber-600 hover:bg-amber-500 text-gray-100 px-3 py-2 md:py-1 rounded transition flex items-center cursor-pointer">
+                <i class="fas fa-circle-info mr-0 md:mr-1 text-2xl md:text-base"></i>
+                <span class="hidden md:block">Desription</span>
+              </button>
               <!-- GitHub Button -->
-              <a href="#" target="_blank"
-                class="bg-[#181717] hover:bg-[#424A5A] text-white dark:bg-[#E6EDF3] dark:hover:bg-[#CDD9E5] dark:text-black px-3 py-1 rounded transition">
-                <i class="fab fa-github mr-1"></i>
-                GitHub
+              <a href="https://github.com/MyeonggyunPark/pf1_scraper" target="_blank"
+                class="bg-[#181717] hover:bg-[#424A5A] text-white dark:bg-[#E6EDF3] dark:hover:bg-[#CDD9E5] dark:text-black px-3 py-2 md:py-1 rounded transition flex items-center text-2xl md:text-base">
+                <i class="fab fa-github mr-0 md:mr-1"></i>
+                <span class="hidden md:block">GitHub</span>
               </a>
               <!-- Live Demo Button -->
-              <a href="#" target="_blank"
-                class="bg-mainBlue hover:bg-[#0EA5E9] text-white dark:bg-[#0EA5E9] dark:hover:bg-mainBlue dark:text-white px-3 py-1 rounded transition">
-                <i class="fas fa-external-link-alt mr-1"></i>
-                Live Demo
+              <a href="https://devjobscraper.up.railway.app/" target="_blank"
+                class="bg-mainBlue hover:bg-[#0EA5E9] text-white dark:bg-[#0EA5E9] dark:hover:bg-mainBlue dark:text-white px-3 py-2 md:py-1 rounded transition flex items-center text-2xl md:text-base">
+                <i class="fas fa-external-link-alt mr-0 md:mr-1"></i>
+                <span class="hidden md:block">Live Demo</span>
               </a>
             </div>
           </div>
         </article>
+
+                        
+        <!-- Description Modal -->
+        <article id="myModal" class="hidden">
+          <div class="fixed inset-0 z-50 flex items-center justify-center bg-white/30 dark:bg-black/40 backdrop-blur-md">
+            <div
+              class="bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 p-4 md:p-6 rounded-lg shadow-lg w-[92%] max-w-sm md:max-w-4xl md:w-full relative">
+
+              <!-- Close Button -->
+              <button id="closeModalBtn"
+                class="absolute top-1 right-4 text-gray-500 font-semibold dark:text-gray-300 text-3xl md:text-5xl hover:text-mainBlue">
+                &times;
+              </button>
+
+              <!-- Modal Title -->
+              <h2 class="text-xl md:text-2xl font-bold mb-2">
+                DevJobScraper<br class="md:hidden">
+                <span class="text-gray-500">(Portfolio Project 1)</span>
+              </h2>
+
+              <!-- Demo Video (Desktop only) -->
+              <div class="my-6 max-w-4xl hidden md:flex justify-center">
+                <video src="./src/static/media/pf1/pf1_live_demo.mp4" autoplay muted loop playsinline
+                  class="w-[700px] h-[400px] object-cover rounded-lg">
+                </video>
+              </div>
+
+              <!-- Mobile-only message -->
+              <p class="text-sm text-gray-500 dark:text-gray-400 md:hidden mt-4 mb-4">
+                ▶ Demo video is available on desktop version only.
+              </p>
+
+              <!-- Summary Description -->
+              <div class="text-base md:text-lg leading-relaxed space-y-3">
+                <p>
+                  <strong>DevJobScraper</strong> is a web application built with <strong>Python, Flask, and TailwindCSS</strong>
+                  that
+                  scrapes job listings from actual sites like berlinstartupjobs.com, weworkremotely.com, and Stepstone.de
+                  allowing users to search jobs based on keywords.
+                </p>
+
+                <ul class="list-disc list-inside space-y-1">
+                  <li><strong>Keyword-based search</strong> (e.g., Python, JavaScript)</li>
+                  <li><strong>Aggregated job counts</strong> and site-specific detailed result pages</li>
+                  <li><strong>CSV export</strong> for downloading job listings</li>
+                  <li><strong>Selenium integration</strong> for JS-rendered sites like WWR</li>
+                  <li><strong>In-memory caching</strong> for faster repeated searches</li>
+                  <li>Fully <strong>responsive UI</strong> optimized for mobile and desktop</li>
+                </ul>
+
+                <p class="mt-4">
+                  Deployment is automated using <strong>Docker</strong> and <strong>Railway</strong>.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+
 
         <!-- Project-Card-2 -->
         <article
