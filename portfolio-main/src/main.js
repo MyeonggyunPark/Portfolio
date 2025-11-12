@@ -149,21 +149,38 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
 });
 
 
-const openModalBtn = document.getElementById("openModalBtn");
-const modal = document.getElementById("myModal");
-const closeModalBtn = document.getElementById("closeModalBtn");
+// Select all modal open buttons and modal elements
+const openButtons = document.querySelectorAll(".openModalBtn");
+const modals = document.querySelectorAll(".projectModal");
 
-openModalBtn.addEventListener("click", () => {
-  modal.classList.remove("hidden");
-});
+// Loop through each open button
+openButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    // Get the unique data-id of the clicked button
+    const id = btn.getAttribute("data-id");
 
-closeModalBtn.addEventListener("click", () => {
-  modal.classList.add("hidden");
-});
+    // Find the corresponding modal with the same data-id
+    const modal = document.querySelector(`.projectModal[data-id="${id}"]`);
 
-// ESC 키 눌러도 모달 닫기
-window.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") {
-    modal.classList.add("hidden");
-  }
-});
+    // Display the modal
+    modal.classList.remove("hidden");
+
+    // Handle ESC key to close the modal
+    const escHandler = (e) => {
+      if (e.key === "Escape") {
+        modal.classList.add("hidden");
+
+        // Prevent memory leaks
+        window.removeEventListener("keydown", escHandler);
+      }
+    };
+    window.addEventListener("keydown", escHandler);
+
+    // Bind close button inside the modal
+    const closeBtn = modal.querySelector(".closeModalBtn");
+    closeBtn.addEventListener("click", () => {
+      modal.classList.add("hidden");
+      window.removeEventListener("keydown", escHandler);
+    });
+  });
+})
