@@ -147,3 +147,23 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
     }
   );
 });
+
+
+const openModalBtn = document.getElementById("openModalBtn");
+const modal = document.getElementById("myModal");
+const closeModalBtn = document.getElementById("closeModalBtn");
+
+openModalBtn.addEventListener("click", () => {
+  modal.classList.remove("hidden");
+});
+
+closeModalBtn.addEventListener("click", () => {
+  modal.classList.add("hidden");
+});
+
+// ESC 키 눌러도 모달 닫기
+window.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    modal.classList.add("hidden");
+  }
+});
