@@ -318,7 +318,7 @@
               <!-- Summary Description -->
               <div class="text-base md:text-lg leading-relaxed space-y-3">
                 <p>
-                  <strong>DevJobScraper</strong> is a web application built with <strong>Python, JavaScript, Flask, and TailwindCSS</strong>
+                  <strong>DevJobScraper</strong> is a web application built with <strong>Python, Flask, JavaScript, and TailwindCSS</strong>
                   that
                   scrapes job listings from actual sites like <span class="underline underline-offset-4">berlinstartupjobs.com, weworkremotely.com, Stepstone.de</span>
                   allowing users to search jobs based on keywords.
@@ -344,15 +344,10 @@
 
         <!-- Project-Card-2 -->
         <article
-          class="relative group bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-          <img class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
+          class="group bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+          <img class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
             src="./src/static/media/pf2/pf2_market_logo.png"
             alt="project-name">
-          
-          <!-- Overlay layer for indicating that the project is not yet completed -->
-          <div class="absolute inset-0 z-10 bg-white/40 dark:bg-black/40 backdrop-blur-sm flex items-center justify-center">
-            <span class="text-gray-800 dark:text-white text-xl font-semibold">🕒 Coming Soon</span>
-          </div>
           
           <div class="p-6">
             <h3 class="text-[22px] font-semibold mb-4 text-gray-800 dark:text-gray-100">Podo Market</h3>
@@ -409,7 +404,7 @@
         
               <!-- Demo Video (Desktop only) -->
               <div class="my-6 max-w-4xl hidden md:flex justify-center">
-                <video src="./src/static/media/pf2/" autoplay muted loop playsinline
+                <video src="./src/static/media/pf2/pf2_live_demo.mp4" autoplay muted loop playsinline
                   class="w-[700px] h-[400px] object-cover rounded-lg">
                 </video>
               </div>
@@ -420,31 +415,34 @@
               </p>
         
               <!-- Summary Description -->
-              <!-- <div class="text-base md:text-lg leading-relaxed space-y-3">
+              <div class="text-base md:text-lg leading-relaxed space-y-3">
                 <p>
-                  <strong>DevJobScraper</strong> is a web application built with <strong>Python, JavaScript, Flask, and
-                    TailwindCSS</strong>
-                  that
-                  scrapes job listings from actual sites like <span class="underline underline-offset-4">berlinstartupjobs.com,
-                    weworkremotely.com, Stepstone.de</span>
-                  allowing users to search jobs based on keywords.
+                  <strong>Podo Market</strong> is a second-hand marketplace built with
+                  <strong>Python, Django, JavaScript, and TailwindCSS</strong>
+                  that lets users sign up with email, verify their account, complete a profile and post items for sale.
+                  Its backend integrates
+                  <span class="underline underline-offset-4">a custom User model, django-allauth, and profile-aware middleware</span>
+                  to enforce authentication and profile completion before users can fully use the site.
                 </p>
-        
+              
                 <ul class="list-disc list-inside space-y-1">
-                  <li><strong>Keyword-based search</strong> (e.g., Python, JavaScript)</li>
-                  <li><strong>Aggregated job counts</strong> and site-specific detailed result pages</li>
-                  <li><strong>CSV export</strong> for downloading job listings</li>
-                  <li><strong>Selenium integration</strong> for JS-rendered sites like WWR</li>
-                  <li><strong>In-memory caching</strong> for faster repeated searches</li>
-                  <li>Fully <strong>responsive UI</strong> optimized for mobile and desktop</li>
+                  <li><strong>Email-based authentication</strong> with a custom User model and django-allauth (including social login)
+                  </li>
+                  <li><strong>Email verification gate</strong> before item creation, with customized confirmation and reset flows</li>
+                  <li><strong>Profile setup & edit flow</strong> (nickname, address, city/state, intro, avatar)</li>
+                  <li><strong>Item management CRUD</strong> with SALE / SOLD toggle and sold items hidden on the main index</li>
+                  <li><strong>Profile-required middleware</strong> that redirects users with incomplete profiles to a setup page</li>
+                  <li>Tailwind-based <strong>responsive UI</strong> for auth, profile and item pages, optimized for mobile and desktop
+                  </li>
                 </ul>
-        
+              
                 <p class="mt-4">
-                  Deployment is automated using <strong>Docker</strong> and <strong>Railway</strong>.
+                  Deployment is handled with <strong>Docker</strong>, <strong>gunicorn</strong>, and <strong>Railway</strong>,
+                  using environment-based settings for secrets, email, and static/media configuration.
                 </p>
               </div>
             </div>
-          </div> -->
+          </div>
         </article>
 
 
