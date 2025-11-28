@@ -1,186 +1,220 @@
-// Dark mode toggle button (desktop version)
+/**
+ * Main JavaScript File for Portfolio Website
+ * Handles: Dark Mode, Mobile Menu, Modals, and EmailJS (Contact Form)
+ */
+
+// --- 1. Theme Logic (Dark/Light Mode) ---
 const toggleBtn = document.getElementById("darkModeToggle");
-const toggleIcon = document.getElementById("toggleIcon");
-const toggleIndicator = document.getElementById("toggleIndicator");
+const toggleBtnMobile = document.getElementById("darkModeToggleMobile");
+const html = document.documentElement;
 
-// Save theme preference in localStorage
-function storeTheme(isDark) {
-  localStorage.setItem("theme", isDark ? "dark" : "light");
-}
+// Function to update icons and indicator position based on theme
+function updateIcons(isDark) {
+  const translateClass = "translate-x-6";
+  const sunIcon = "fa-sun";
+  const moonIcon = "fa-moon";
 
-// Load theme from localStorage or system preference
-function loadTheme() {
-  const theme = localStorage.getItem("theme");
+  // Desktop Elements
+  const indDesktop = document.getElementById("toggleIndicator");
+  const iconDesktop = document.getElementById("toggleIcon");
 
-  if (
-    theme === "dark" ||
-    (!theme && window.matchMedia("(prefers-color-scheme: dark)").matches)
-  ) {
-    document.documentElement.classList.add("dark");
-    toggleIcon.classList.replace("fa-moon", "fa-sun");
-    toggleIndicator.classList.add("translate-x-12");
-  } else {
-    document.documentElement.classList.remove("dark");
-    toggleIcon.classList.replace("fa-sun", "fa-moon");
-    toggleIndicator.classList.remove("translate-x-12");
-  }
-}
-
-// Toggle theme on button click
-toggleBtn.addEventListener("click", () => {
-  const isDark = document.documentElement.classList.toggle("dark");
+  // Mobile Elements
+  const indMobile = document.getElementById("toggleIndicatorMobile");
+  const iconMobile = document.getElementById("toggleIconMobile");
 
   if (isDark) {
-    toggleIcon.classList.replace("fa-moon", "fa-sun");
-    toggleIndicator.classList.add("translate-x-12");
-  } else {
-    toggleIcon.classList.replace("fa-sun", "fa-moon");
-    toggleIndicator.classList.remove("translate-x-12");
-  }
+    // Apply Dark Mode
+    html.classList.add("dark");
 
-  storeTheme(isDark);
-});
+    // Update Desktop Button
+    indDesktop?.classList.add(translateClass);
+    iconDesktop?.classList.replace(moonIcon, sunIcon);
+
+    // Update Mobile Button
+    indMobile?.classList.add(translateClass);
+    iconMobile?.classList.replace(moonIcon, sunIcon);
+  } else {
+    // Apply Light Mode
+    html.classList.remove("dark");
+
+    // Update Desktop Button
+    indDesktop?.classList.remove(translateClass);
+    iconDesktop?.classList.replace(sunIcon, moonIcon);
+
+    // Update Mobile Button
+    indMobile?.classList.remove(translateClass);
+    iconMobile?.classList.replace(sunIcon, moonIcon);
+  }
+}
+
+// Function to toggle theme and save preference
+function toggleTheme() {
+  const isDark = !html.classList.contains("dark");
+  localStorage.setItem("theme", isDark ? "dark" : "light");
+  updateIcons(isDark);
+}
 
 // Initialize theme on page load
-loadTheme();
+const savedTheme = localStorage.getItem("theme");
+const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
+// Apply saved theme or fallback to system preference
+updateIcons(savedTheme === "dark" || (!savedTheme && systemDark));
 
+// Add event listeners to toggle buttons
+toggleBtn?.addEventListener("click", toggleTheme);
+toggleBtnMobile?.addEventListener("click", toggleTheme);
 
-// 📱 Mobile sidebar toggle
+// --- 2. Mobile Menu Logic ---
+const menuToggle = document.getElementById("menuToggle");
+const closeMenu = document.getElementById("closeMenu");
 const mobileMenu = document.getElementById("mobileMenu");
+const menuOverlay = document.getElementById("menuOverlay");
 
-// Open mobile menu
-document.getElementById("menuToggle").addEventListener("click", () => {
-  mobileMenu.classList.toggle("translate-x-full");
-});
+// Function to open the mobile menu
+function openMenu() {
+  mobileMenu.classList.remove("translate-x-full");
+  menuOverlay.classList.remove("hidden");
+}
 
-// Close mobile menu
-document.getElementById("closeMenu").addEventListener("click", () => {
+// Function to close the mobile menu
+function closeMenuFunc() {
   mobileMenu.classList.add("translate-x-full");
-});
-
-// Dark mode toggle button (mobile version)
-const toggleBtnMobile = document.getElementById("darkModeToggleMobile");
-const toggleIconMobile = document.getElementById("toggleIconMobile");
-const toggleIndicatorMobile = document.getElementById("toggleIndicatorMobile");
-
-// Save theme preference in localStorage (mobile)
-function storeThemeMobile(isDark) {
-  localStorage.setItem("theme", isDark ? "dark" : "light");
+  menuOverlay.classList.add("hidden");
 }
 
-// Load theme from localStorage or system preference (mobile)
-function loadThemeMobile() {
-  const theme = localStorage.getItem("theme");
+// Event listeners for menu toggling
+menuToggle?.addEventListener("click", openMenu);
+closeMenu?.addEventListener("click", closeMenuFunc);
+menuOverlay?.addEventListener("click", closeMenuFunc);
 
-  if (
-    theme === "dark" ||
-    (!theme && window.matchMedia("(prefers-color-scheme: dark)").matches)
-  ) {
-    document.documentElement.classList.add("dark");
-    toggleIconMobile.classList.replace("fa-moon", "fa-sun");
-    toggleIndicatorMobile.classList.add("translate-x-12");
-  } else {
-    document.documentElement.classList.remove("dark");
-    toggleIconMobile.classList.replace("fa-sun", "fa-moon");
-    toggleIndicatorMobile.classList.remove("translate-x-12");
-  }
-}
-
-// Toggle theme on mobile button click
-toggleBtnMobile.addEventListener("click", () => {
-  const isDark = document.documentElement.classList.toggle("dark");
-
-  if (isDark) {
-    toggleIconMobile.classList.replace("fa-moon", "fa-sun");
-    toggleIndicatorMobile.classList.add("translate-x-12");
-  } else {
-    toggleIconMobile.classList.replace("fa-sun", "fa-moon");
-    toggleIndicatorMobile.classList.remove("translate-x-12");
-  }
-
-  storeThemeMobile(isDark);
+// Close menu automatically when a link is clicked
+document.querySelectorAll("#mobileMenu a").forEach((link) => {
+  link.addEventListener("click", closeMenuFunc);
 });
 
-// Initialize theme on page load (mobile)
-loadThemeMobile();
-
-// Initialize EmailJS
-emailjs.init("B1u9i2VsNzBg_HP00");
-
-// Handle form submission
-document.getElementById("contactForm").addEventListener("submit", function (e) {
-  e.preventDefault(); // // Prevent default form submission
-
-  emailjs.sendForm("service_qerzzjn", "template_coa02zt", this).then(
-    function () {
-      Toastify({
-        text: "✅ Your message has been sent successfully!",
-        duration: 4000,
-        gravity: "bottom",
-        position: "right",
-        backgroundColor: getComputedStyle(document.documentElement)
-          .getPropertyValue("--color-pyBlue")
-          .trim(),
-        style: {
-          borderRadius: "8px",
-          color: "#fff",
-          fontWeight: "500",
-        },
-      }).showToast();
-      e.target.reset(); // Reset the form
-    },
-    function (error) {
-      console.error("❌ Failed to send the message:", error);
-      Toastify({
-        text: "❌ Failed to send the message. Please try again later.",
-        duration: 4000,
-        gravity: "bottom",
-        position: "right",
-        backgroundColor: "#DC2626",
-        style: {
-          borderRadius: "8px",
-          color: "#fff",
-          fontWeight: "500",
-        },
-      }).showToast();
-    }
-  );
-});
-
-
-// Select all modal open buttons and modal elements
+// --- 3. Modal Logic (Project Details) ---
 const openButtons = document.querySelectorAll(".openModalBtn");
 const modals = document.querySelectorAll(".projectModal");
 
-// Loop through each open button
+// Add click event to all "Details" buttons
 openButtons.forEach((btn) => {
   btn.addEventListener("click", () => {
-    // Get the unique data-id of the clicked button
+    // Get the unique ID from the button
     const id = btn.getAttribute("data-id");
-
-    // Find the corresponding modal with the same data-id
+    // Find the matching modal
     const modal = document.querySelector(`.projectModal[data-id="${id}"]`);
 
-    // Display the modal
-    modal.classList.remove("hidden");
-
-    // Handle ESC key to close the modal
-    const escHandler = (e) => {
-      if (e.key === "Escape") {
-        modal.classList.add("hidden");
-
-        // Prevent memory leaks
-        window.removeEventListener("keydown", escHandler);
-      }
-    };
-    window.addEventListener("keydown", escHandler);
-
-    // Bind close button inside the modal
-    const closeBtn = modal.querySelector(".closeModalBtn");
-    closeBtn.addEventListener("click", () => {
-      modal.classList.add("hidden");
-      window.removeEventListener("keydown", escHandler);
-    });
+    if (modal) {
+      modal.classList.remove("hidden");
+      document.body.style.overflow = "hidden"; // Prevent background scrolling
+    }
   });
-})
+});
+
+// Function to hide a modal
+function closeModal(modal) {
+  modal.classList.add("hidden");
+  document.body.style.overflow = ""; // Restore scrolling
+}
+
+// Add event listeners to close modals
+modals.forEach((modal) => {
+  // 1. Close when clicking the "X" button
+  modal
+    .querySelector(".closeModalBtn")
+    ?.addEventListener("click", () => closeModal(modal));
+
+  // 2. Close when clicking outside the modal content (overlay)
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) closeModal(modal);
+  });
+});
+
+// 3. Close when pressing the "Escape" key
+window.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    modals.forEach((modal) => {
+      if (!modal.classList.contains("hidden")) closeModal(modal);
+    });
+  }
+});
+
+// --- 4. EmailJS Logic (Contact Form) ---
+emailjs.init("B1u9i2VsNzBg_HP00");
+
+const contactForm = document.getElementById("contactForm");
+
+if (contactForm) {
+  contactForm.addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent default form submission
+
+    // UX: Disable button and show loading state
+    const submitBtn = this.querySelector('button[type="submit"]');
+    const originalText = submitBtn.innerHTML;
+    submitBtn.disabled = true;
+    submitBtn.innerHTML =
+      '<i class="fas fa-spinner fa-spin mr-2"></i> Sending...';
+
+    // --- Language Detection Logic ---
+    // Detects the language from the <html lang="..."> attribute
+    const currentLang = document.documentElement.lang || "en";
+
+    // Define messages for each language
+    const messages = {
+      de: {
+        success: "✅ Nachricht erfolgreich gesendet! Ich melde mich bald.",
+        error:
+          "❌ Fehler beim Senden. Bitte versuchen Sie es später noch einmal.",
+      },
+      en: {
+        success: "✅ Your message has been sent successfully!",
+        error: "❌ Failed to send the message. Please try again later.",
+      },
+    };
+
+    // Select message based on current language (default to English if undefined)
+    const msg = messages[currentLang] || messages["en"];
+
+    // Send email using EmailJS
+    emailjs
+      .sendForm("service_qerzzjn", "template_coa02zt", this)
+      .then(() => {
+        // Success Notification
+        Toastify({
+          text: msg.success,
+          duration: 5000,
+          gravity: "bottom",
+          position: "right",
+          style: {
+            background: "#10B981", // Green color
+            borderRadius: "8px",
+            fontWeight: "bold",
+            color: "#fff",
+          },
+        }).showToast();
+        this.reset(); // Clear the form
+      })
+      .catch((error) => {
+        console.error("EmailJS Error:", error);
+        // Error Notification
+        Toastify({
+          text: msg.error,
+          duration: 5000,
+          gravity: "bottom",
+          position: "right",
+          style: {
+            background: "#EF4444", // Red color
+            borderRadius: "8px",
+            fontWeight: "bold",
+            color: "#fff",
+          },
+        }).showToast();
+      })
+      .finally(() => {
+        // Restore button state
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalText;
+      });
+  });
+}

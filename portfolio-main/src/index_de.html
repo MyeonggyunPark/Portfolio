@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <!-- Enable smooth scrolling for anchor links -->
-<html lang="en" class="scroll-smooth">
+<html lang="de" class="scroll-smooth">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <!-- Favicon for browser tab -->
-  <link rel="icon" href="./src/static/images/favicon-laptop.svg" type="image/svg+xml">
+  <link rel="icon" href="./static/images/favicon-laptop.svg" type="image/svg+xml">
   <title>Portfolio - Myeonggyun Park</title>
 
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
+
   <!-- EmailJS library for sending emails -->
   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
@@ -21,15 +21,15 @@
   <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
   <!-- Tailwind CSS output file -->
-  <link rel="stylesheet" href="./dist/output.css">
-
+  <link rel="stylesheet" href="../dist/output.css">
+  
   <!-- Custom JavaScript file -->
-  <script src="./src/main.js" defer></script>
-
+  <script src="./main.js" defer></script>
+  
   <!-- Offset anchor link targets to account for fixed header -->
   <style>
     [id] {
-      scroll-margin-top: 90px; 
+      scroll-margin-top: 90px;
     }
   </style>
 </head>
@@ -45,77 +45,78 @@
 
       <!-- Menu (Desktop) -->
       <div class="hidden md:flex items-center gap-x-6">
-        <a href="#home" class="hover:text-mainBlue transition-colors text-lg">Home</a>
-        <a href="#about" class="hover:text-mainBlue transition-colors text-lg">About</a>
+        <a href="#home" class="hover:text-mainBlue transition-colors text-lg">Start</a>
+        <a href="#about" class="hover:text-mainBlue transition-colors text-lg">Über mich</a>
         <a href="#skills" class="hover:text-mainBlue transition-colors text-lg">Skills</a>
-        <a href="#projects" class="hover:text-mainBlue transition-colors text-lg">Projects</a>
-        <a href="#contact" class="hover:text-mainBlue transition-colors text-lg">Contact</a>
+        <a href="#project" class="hover:text-mainBlue transition-colors text-lg">Projekte</a>
+        <a href="#contact" class="hover:text-mainBlue transition-colors text-lg">Kontakt</a>
 
         <!-- Language Switcher (Desktop) -->
-        <a href="./src/index_de.html"
+        <a href="../index.html"
           class="flex items-center justify-center p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-          title="Switch to German">
-          <img src="https://flagcdn.com/w40/de.png" srcset="https://flagcdn.com/w80/de.png 2x" width="28" height="21"
-            alt="German Flag" class="rounded-sm shadow-sm object-cover">
+          title="Switch to English">
+          <img src="https://flagcdn.com/w40/gb.png" srcset="https://flagcdn.com/w80/gb.png 2x" width="28" height="21"
+            alt="UK Flag" class="rounded-sm shadow-sm object-cover">
         </a>
 
         <!-- Dark Mode Toggle (Desktop) -->
-        <button id="darkModeToggle"
+        <button id="darkModeToggle" 
           class="relative w-14 h-8 rounded-full bg-gray-200 dark:bg-gray-700 transition-colors duration-300 focus:outline-none flex items-center px-1 cursor-pointer">
-        
+
           <!-- Inner Circle (Desktop) -->
-          <span id="toggleIndicator" class="w-6 h-6 rounded-full bg-gray-900 dark:bg-white text-white dark:text-yellow-400  flex items-center justify-center text-sm shadow-md transform transition-transform duration-300 translate-x-0 dark:translate-x-6">
+          <span id="toggleIndicator"
+            class="w-6 h-6 rounded-full bg-gray-900 dark:bg-white text-white dark:text-yellow-400 flex items-center justify-center text-sm shadow-md transform transition-transform duration-300 translate-x-0 dark:translate-x-6">
             <i id="toggleIcon" class="fas fa-sun"></i>
           </span>
         </button>
       </div>
 
-      <!-- Toggle Icon (Mobile) -->
-      <button id="menuToggle" class="md:hidden p-2 text-gray-700 dark:text-white cursor-pointer">
+      <!-- Menu Toggle (Mobile) -->
+      <button id="menuToggle" class="md:hidden p-2 text-gray-700 dark:text-white cursor-pointer"
+        aria-label="Menü öffnen">
         <i class="fas fa-bars text-3xl"></i>
       </button>
     </nav>
   </header>
 
   <!-- sidebar (Mobile) -->
-  <aside 
-    id="mobileMenu"
+  <aside id="mobileMenu"
     class="block md:hidden fixed right-0 inset-y-0 w-40 bg-white dark:bg-gray-800 shadow-2xl translate-x-full transition-transform duration-300 z-30">
 
     <div class="flex justify-between items-center p-4 mb-3">
 
       <!-- Close Button -->
       <button id="closeMenu" class="text-gray-700 dark:text-white">
-        <i class="fas fa-times text-2xl mt-1.5"></i>
+        <i class="fas fa-times text-2xl"></i>
       </button>
 
       <!-- Dark Mode Toggle (Mobile) -->
       <button id="darkModeToggleMobile"
         class="relative w-14 h-8 rounded-full bg-gray-200 dark:bg-gray-700 transition-colors duration-300 focus:outline-none flex items-center px-1">
-      
+
         <!-- Inner Circle (Mobile) -->
         <span id="toggleIndicatorMobile"
-          class="w-6 h-6 rounded-full bg-gray-900 dark:bg-white text-white dark:text-yellow-400  flex items-center justify-center text-sm shadow-md transform transition-transform duration-300 translate-x-0 dark:translate-x-6">
+          class="w-6 h-6 rounded-full bg-gray-900 dark:bg-white text-white dark:text-yellow-400 flex items-center justify-center text-sm shadow-md transform transition-transform duration-300 translate-x-0 dark:translate-x-6">
           <i id="toggleIconMobile" class="fas fa-sun"></i>
         </span>
       </button>
     </div>
 
     <!-- Language Switcher (Mobile) -->
-    <a href="./src/index_de.html"
+    <a href="../index.html"
       class="flex items-center justify-center p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-      title="Switch to German">
-      <img src="https://flagcdn.com/w40/de.png" srcset="https://flagcdn.com/w80/de.png 2x" width="33" height="26"
-        alt="German Flag" class="rounded-sm shadow-sm object-cover">
+      title="Switch to English">
+      <img src="https://flagcdn.com/w40/gb.png" srcset="https://flagcdn.com/w80/gb.png 2x" width="33" height="26"
+        alt="UK Flag" class="rounded-sm shadow-sm object-cover">
     </a>
-    
+
     <!-- Menu (Mobile) -->
     <nav class="flex flex-col space-y-5 mt-10 ml-5 px-6">
-      <a href="#home" class="hover:text-mainBlue transition-colors border-b border-gray-300 dark:border-gray-700 pb-2">Home</a>
-      <a href="#about" class="hover:text-mainBlue transition-colors border-b border-gray-300 dark:border-gray-700 pb-2">About</a>
+      <a href="#home" class="hover:text-mainBlue transition-colors border-b border-gray-300 dark:border-gray-700 pb-2">Start</a>
+      <a href="#about" class="hover:text-mainBlue transition-colors border-b border-gray-300 dark:border-gray-700 pb-2">Über mich</a>
       <a href="#skills" class="hover:text-mainBlue transition-colors border-b border-gray-300 dark:border-gray-700 pb-2">Skills</a>
-      <a href="#project" class="hover:text-mainBlue transition-colors border-b border-gray-300 dark:border-gray-700 pb-2">Projects</a>
-      <a href="#contact" class="hover:text-mainBlue transition-colors">Contact</a>  
+      <a href="#project" class="hover:text-mainBlue transition-colors border-b border-gray-300 dark:border-gray-700 pb-2">Projekte</a>
+      <a href="#contact" class="hover:text-mainBlue transition-colors">Kontakt</a>
     </nav>
   </aside>
 
@@ -127,33 +128,33 @@
 
     <!-- Home Section -->
     <section id="home" class="flex flex-col md:flex-row justify-between items-center mb-16">
-
+      
       <!-- Profile Image -->
       <div class="shrink-0 mb-8 md:mb-0 md:mr-10 relative group">
         <div
           class="absolute -inset-1 bg-linear-to-r from-blue-400 to-teal-400 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200">
         </div>
-        <img class="relative size-56 rounded-full border-4 border-white dark:border-gray-800 object-cover shadow-xl" 
-            src="./src/static/images/profil.png" alt="profil">
+        <img class="relative size-56 rounded-full border-4 border-white dark:border-gray-800 object-cover shadow-xl"
+          src="../src/static/images/profil.png" alt="profil">
       </div>
 
       <!-- Personal Introduction -->
       <div class="text-center md:text-right max-w-lg">
         <h2 class="text-2xl md:text-3xl font-bold mb-2 text-gray-900 dark:text-white leading-tight">
-          Aspiring IT Specialist<br>
+          Angehender Fachinformatiker<br>
           <span class="text-mainBlue">
-            for Application Development
+            für Anwendungsentwicklung
           </span>
         </h2>
         <p class="text-lg text-gray-600 dark:text-gray-300 mb-4 font-medium">
-          Focus: Backend & Web Technologies
+          Schwerpunkt: Backend & Web Technologies
         </p>
         <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
-          Motivated career changer with a passion for efficient code.<br>
-          Currently retraining and looking for new technical challenges.<br> 
-          My focus is on 
+          Motivierter Quereinsteiger mit Leidenschaft für effizienten Code.<br>
+          Aktuell in der Umschulung und auf der Suche nach neuen technischen Herausforderungen.
+          Mein Fokus liegt auf 
           <strong class="text-gray-800 dark:text-gray-200">
-            Python, Django, JavaScript and modernen Web-Technologien.
+            Python, Django, JavaScript und modernen Web-Technologien.
           </strong>
         </p>
       </div>
@@ -162,110 +163,114 @@
     <!-- About Section -->
     <section id="about" class="mb-24 scroll-mt-24">
       <h2 class="text-3xl uppercase font-bold mb-8 border-l-4 border-mainBlue pl-4">
-        About
+        Über mich
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
-        <!-- Lebenslauf  -->
-        <article class="bg-gray-100 dark:bg-gray-800 shadow-lg rounded-xl p-6 h-full flex flex-col border border-gray-200 dark:border-gray-700">
+        <!-- Lebenslauf -->
+        <article
+          class="bg-gray-100 dark:bg-gray-800 shadow-lg rounded-xl p-6 h-full flex flex-col border border-gray-200 dark:border-gray-700">
           <h3 class="text-xl font-bold mb-6 flex items-center text-mainBlue">
-            <i class="fas fa-graduation-cap mr-3"></i>
-            Education & Training
+            <i class="fas fa-graduation-cap mr-3"></i> 
+            Ausbildung & Studium
           </h3>
 
           <ul class="text-gray-700 dark:text-gray-300 leading-relaxed space-y-6">
             <li class="relative pl-4 border-l-2 border-gray-300 dark:border-gray-600">
               <span class="block font-bold text-lg text-gray-900 dark:text-white">
-                Retraining as an IT specialist
+                Umschulung zum Fachinformatiker
               </span>
               <span class="block text-sm text-mainBlue font-medium mb-1">
-                Application development
+                Anwendungsentwicklung
               </span>
               <span class="block">
                 GFN Training Center
               </span>
               <span class="text-sm text-gray-500 flex items-center gap-1 mt-1">
-                <i class="fa-solid fa-location-dot"></i>
-                Essen, Germany
+                <i class="fa-solid fa-location-dot"></i> 
+                Essen, Deutschland
               </span>
             </li>
+
             <li class="relative pl-4 border-l-2 border-gray-300 dark:border-gray-600">
               <span class="block font-bold text-lg text-gray-900 dark:text-white">
-                B.Sc. Computer Science
+                B.Sc. Informatik
               </span>
               <span class="block text-sm text-gray-500 mb-1">
-                (Distance Learning)
+                (Fernstudium)
               </span>
               <span class="block">
                 Korea National Open University
               </span>
               <span class="text-sm text-gray-500 flex items-center gap-1 mt-1">
-                <i class="fa-solid fa-location-dot"></i>
-                Seoul, South Korea
+                <i class="fa-solid fa-location-dot"></i> 
+                Seoul, Südkorea
               </span>
             </li>
+
             <li class="relative pl-4 border-l-2 border-gray-300 dark:border-gray-600">
               <span class="block font-bold text-lg text-gray-900 dark:text-white">
-                Abitur (High School Diploma)
+                Abitur (Allgemeine Hochschulreife)
               </span>
               <span class="block">
                 Sein High School
               </span>
               <span class="text-sm text-gray-500 flex items-center gap-1 mt-1">
-                <i class="fa-solid fa-location-dot"></i>
-                Ulsan, South Korea
+                <i class="fa-solid fa-location-dot"></i> 
+                Ulsan, Südkorea
               </span>
             </li>
           </ul>
           <div class="flex justify-end mt-auto">
-            <a href="./src/lebenslauf.html" target="_blank"
-              class="bg-mainBlue hover:bg-blue-600 text-white px-3 py-1 rounded transition-colors">
-              More
-            </a>
+            <a href="../src/lebenslauf.html" target="_blank"
+              class="bg-mainBlue hover:bg-[#0EA5E9] text-white dark:bg-[#0EA5E9] dark:hover:bg-mainBlue dark:text-white px-3 py-1 rounded transition">Mehr</a>
           </div>
         </article>
 
         <!-- Anschreiben -->
-        <article class="bg-gray-100 dark:bg-gray-800 shadow-lg rounded-xl p-6 h-full flex flex-col border border-gray-200 dark:border-gray-700">
+        <article
+          class="bg-gray-100 dark:bg-gray-800 shadow-lg rounded-xl p-6 flex flex-col border border-gray-200 dark:border-gray-700">
           <h3 class="text-xl font-bold mb-6 flex items-center text-mainBlue">
-            <i class="fas fa-briefcase mr-3"></i>
-            Motivation & Internship
+            <i class="fas fa-briefcase mr-3"></i> 
+            Motivation & Ziel
           </h3>
+
           <ul class="text-gray-700 dark:text-gray-300 leading-relaxed space-y-6">
             <li class="relative pl-4 border-l-2 border-gray-300 dark:border-gray-600">
               <span class="block font-bold text-lg text-gray-900 dark:text-white">
-                Motivation
+                Leidenschaft
               </span>
-              <span class="mt-1 text-sm md:text-base">
-                Enthusiasm for software development & technology – started learning Python on my own initiative.
-              </span>
+
+              <p class="mt-1 text-sm md:text-base">
+                Großes Interesse an Softwareentwicklung & neuen Technologien.
+                Autodidaktischer Start mit Python, vertieft durch strukturierte Ausbildung.
+              </p>
             </li>
             <li class="relative pl-4 border-l-2 border-gray-300 dark:border-gray-600">
               <span class="block font-bold text-lg text-gray-900 dark:text-white">
-                Career Change
+                Karrierewechsel
               </span>
-              <span class="mt-1 text-sm md:text-base">
-                Starting a new career in the IT field through retraining and distance studies in computer science.
-              </span>
+              <p class="mt-1 text-sm md:text-base">
+                Zielstrebiger Quereinstieg in die IT-Branche durch Umschulung und begleitendes Fernstudium.
+              </p>
             </li>
+
             <li class="relative pl-4 border-l-2 border-blue-400 bg-blue-50 dark:bg-blue-900/20 -ml-4 p-4 rounded-r-lg">
               <span class="block font-bold text-lg text-mainBlue">
-                Internship
+                Praktikumssuche
               </span>
-              <span class="mt-1 font-medium">
-                Looking for a 9-month<br> 
-                mandatory internship starting
+              <p class="mt-1 font-medium">
+                Suche nach einem 9-monatigen<br>
+                Pflichtpraktikum ab 
                 <span class="underline decoration-wavy decoration-mainBlue">
                   April 2026.
                 </span>
-              </span>
+              </p>
             </li>
           </ul>
           <div class="flex justify-end mt-5">
-            <a href="./src/anschreiben.html" target="_blank"
-              class="bg-mainBlue hover:bg-blue-600 text-white px-3 py-1 rounded transition-colors">
-              More
-            </a>
+            <a href="../src/anschreiben.html" target="_blank"
+              class="bg-mainBlue hover:bg-[#0EA5E9] text-white dark:bg-[#0EA5E9] dark:hover:bg-mainBlue dark:text-white px-3 py-1 rounded transition">Mehr</a>
           </div>
         </article>
       </div>
@@ -279,27 +284,33 @@
 
       <!-- Skill Card Template -->
       <div class="grid grid-cols-2 md:grid-cols-3 gap-5">
-        <div class="flex flex-col items-center bg-gray-100 dark:bg-gray-800 shadow-md rounded-xl p-4 border border-gray-200 dark:border-gray-700">
-          <img src="./src/static/images/python-logo-only.png" alt="Python Logo" class="w-10 h-11 mt-1">
+        <div
+          class="flex flex-col items-center bg-gray-100 dark:bg-gray-800 shadow-md rounded-xl p-4 border border-gray-200 dark:border-gray-700">
+          <img src="../src/static/images/python-logo-only.png" alt="Python Logo" class="w-10 h-11 mt-1">
           <h3 class="text-lg font-semibold">Python</h3>
         </div>
-        <div class="flex flex-col items-center bg-gray-100 dark:bg-gray-800 shadow-md rounded-xl p-4 border border-gray-200 dark:border-gray-700">
-          <img src="./src/static/images/django-logo-negative.png" alt="Django Logo" class="w-11 h-9.5 mt-1">
+        <div
+          class="flex flex-col items-center bg-gray-100 dark:bg-gray-800 shadow-md rounded-xl p-4 border border-gray-200 dark:border-gray-700">
+          <img src="../src/static/images/django-logo-negative.png" alt="Django Logo" class="w-11 h-9.5 mt-1">
           <h3 class="text-lg font-semibold mt-1">Django</h3>
         </div>
-        <div class="flex flex-col items-center bg-gray-100 dark:bg-gray-800 shadow-md rounded-xl p-4 border border-gray-200 dark:border-gray-700">
-          <img src="./src/static/images/tailwind-css-logo.png" alt="Tailwind CSS" class="w-10 h-9 mt-1.5">
+        <div
+          class="flex flex-col items-center bg-gray-100 dark:bg-gray-800 shadow-md rounded-xl p-4 border border-gray-200 dark:border-gray-700">
+          <img src="../src/static/images/tailwind-css-logo.png" alt="Tailwind CSS" class="w-10 h-9 mt-1.5">
           <h3 class="text-lg font-semibold mt-1">Tailwind CSS</h3>
         </div>
-        <div class="flex flex-col items-center bg-gray-100 dark:bg-gray-800 shadow-md rounded-xl p-4 border border-gray-200 dark:border-gray-700">
+        <div
+          class="flex flex-col items-center bg-gray-100 dark:bg-gray-800 shadow-md rounded-xl p-4 border border-gray-200 dark:border-gray-700">
           <i class="fa-brands fa-html5 text-[40px] text-[#E34F26]"></i>
           <h3 class="text-lg font-semibold mt-1">HTML5</h3>
         </div>
-        <div class="flex flex-col items-center bg-gray-100 dark:bg-gray-800 shadow-md rounded-xl p-4 border border-gray-200 dark:border-gray-700">
+        <div
+          class="flex flex-col items-center bg-gray-100 dark:bg-gray-800 shadow-md rounded-xl p-4 border border-gray-200 dark:border-gray-700">
           <i class="fa-brands fa-css3-alt text-[40px] text-[#264DE4]"></i>
           <h3 class="text-lg font-semibold mt-1">CSS</h3>
         </div>
-        <div class="flex flex-col items-center bg-gray-100 dark:bg-gray-800 shadow-md rounded-xl p-4 border border-gray-200 dark:border-gray-700">
+        <div
+          class="flex flex-col items-center bg-gray-100 dark:bg-gray-800 shadow-md rounded-xl p-4 border border-gray-200 dark:border-gray-700">
           <i class="fa-brands fa-js text-[40px] text-[#F7DF1E]"></i>
           <h3 class="text-lg font-semibold mt-1">JavaScript</h3>
         </div>
@@ -307,20 +318,19 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="mb-24 scroll-mt-24">
+    <section id="project" class="mb-24 scroll-mt-24">
       <h2 class="text-3xl uppercase font-bold mb-8 border-l-4 border-mainBlue pl-4">
-        Projects
+        Projekte
       </h2>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
         <!-- Project 1: DevJobScraper -->
         <article
           class="group bg-gray-100 dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg border border-gray-200 dark:border-gray-700">
           <img class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-            src="./src/static/media/pf1/pf1_scraper_logo.png"
-            alt="DevJobScraper">
-
+            src="../src/static/media/pf1/pf1_scraper_logo.png" alt="DevJobScraper">
+        
           <div class="px-4 py-6">
             <h3 class="text-2xl font-bold mb-8 text-gray-800 dark:text-gray-100">
               DevJobScraper
@@ -343,7 +353,7 @@
                 TailwindCSS
               </span>
             </div>
-
+        
             <div class="space-x-6 md:space-x-4 mt-10 flex justify-start">
 
               <!-- Description Modal Button -->
@@ -366,7 +376,6 @@
                 <i class="fas fa-external-link-alt mr-0 md:mr-1"></i>
                 <span class="hidden md:block">Live Demo</span>
               </a>
-
             </div>
           </div>
         </article>
@@ -385,7 +394,7 @@
                 <h2 class="text-xl md:text-2xl font-bold flex items-center">
                   DevJobScraper
                   <span class="text-sm font-normal text-gray-500 ml-2 border px-2 py-0.5 rounded">
-                    Portfolio Project 1
+                    Portfolio Projekt 1
                   </span>
                 </h2>
         
@@ -400,56 +409,55 @@
         
                 <!-- Demo Video (Desktop only) -->
                 <div class="mb-6 max-w-4xl hidden md:flex justify-center">
-                  <video src="./src/static/media/pf1/pf1_live_demo.mp4" autoplay muted loop playsinline
+                  <video src="../src/static/media/pf1/pf1_live_demo.mp4" autoplay muted loop playsinline
                     class="w-[700px] h-[400px] object-cover rounded-lg">
                   </video>
                 </div>
         
                 <!-- Mobile-only message -->
                 <p class="text-sm text-gray-500 md:hidden mb-4">
-                  ▶ Demo video is available on desktop version only.
+                  ▶ Das Demo-Video ist nur auf der Desktop-Version verfügbar.
                 </p>
         
                 <!--Modal Poject Description -->
                 <div class="prose dark:prose-invert max-w-none">
                   <p>
-                    <strong>DevJobScraper</strong> is a web application built with
-                    <strong>Python, Flask, JavaScript and TailwindCSS</strong>
-                    that scrapes job listings from actual sites like
-                    <span class="text-mainBlue">berlinstartupjobs.com, weworkremotely.com and Stepstone.de</span> 
-                    allowing users to search jobs based on keywords.
+                    <strong>DevJobScraper</strong> ist eine Webanwendung basierend auf
+                    <strong>Python, Flask, JavaScript und TailwindCSS</strong>,
+                    die Stellenanzeigen von realen Plattformen wie
+                    <span class="text-mainBlue">
+                      berlinstartupjobs.com, weworkremotely.com und Stepstone.de</span> aggregiert.
                   </p>
         
                   <ul class="list-disc list-inside space-y-1">
                     <li>
-                      <strong>Keyword-based search</strong>
-                      (e.g. Python, JavaScript)
+                      <strong>Schlüsselwort-Suche</strong>
+                      (z.B. Python, JavaScript)
                     </li>
                     <li>
-                      <strong>Aggregated job counts</strong> 
-                      and site-specific detailed result pages
+                      <strong>Daten-Aggregation</strong> 
+                      von verschiedenen Quellen in einer einheitlichen UI
                     </li>
                     <li>
-                      <strong>CSV export</strong>
-                      for downloading job listings
+                      <strong>CSV-Export</strong>
+                      zum Herunterladen der Ergebnisse
                     </li>
                     <li>
-                      <strong>Selenium integration</strong>
-                      for JavaScript-rendered sites
+                      <strong>Selenium Integration</strong>
+                      für JavaScript-gerenderte Webseiten
                     </li>
                     <li>
-                      <strong>In-memory caching</strong> 
-                      for faster repeated searches
+                      <strong>In-Memory Caching</strong> 
+                      zur Beschleunigung wiederholter Anfragen
                     </li>
                     <li>
-                      Fully <strong>responsive UI</strong> 
-                      optimized for mobile and desktop
+                      Vollständig <strong>responsives Desgin</strong> 
+                      optimiert für Mobile und Desktop
                     </li>
                   </ul>
         
                   <p class="mt-4">
-                    Deployment is automated using 
-                    <strong>Docker</strong> and <strong>Railway</strong>.
+                    Das Deployment ist mit <strong>Docker</strong> und <strong>Railway</strong> automatisiert.
                   </p>
                 </div>
               </div>
@@ -457,14 +465,12 @@
           </div>
         </article>
 
-
         <!-- Project 2: Podo Market -->
         <article
           class="group bg-gray-100 dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg border border-gray-200 dark:border-gray-700">
           <img class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-            src="./src/static/media/pf2/pf2_market_logo.png"
-            alt="Podo Market">
-          
+            src="../src/static/media/pf2/pf2_market_logo.png" alt="Podo Market">
+        
           <div class="px-4 py-6">
             <h3 class="text-2xl font-bold mb-8 text-gray-800 dark:text-gray-100">
               Podo Market
@@ -488,7 +494,7 @@
                 TailwindCSS
               </span>
             </div>
-
+        
             <div class="space-x-6 md:space-x-4 mt-10 flex justify-start">
 
               <!-- Description Modal Button -->
@@ -497,7 +503,7 @@
                 <i class="fas fa-circle-info mr-0 md:mr-1"></i>
                 <span class="hidden md:block">Details</span>
               </button>
-
+              
               <!-- GitHub Button -->
               <a href="https://github.com/MyeonggyunPark/pf2_market" target="_blank"
                 class="text-gray-600 dark:text-gray-300 hover:text-mainBlue hover:border-mainBlue font-medium border border-gray-600 dark:border-gray-300 rounded-md transition-colors px-3 py-2 md:py-1 flex items-center text-2xl md:text-base">
@@ -516,7 +522,7 @@
           </div>
         </article>
 
-        <!-- Modal 2: Podo Market  -->
+        <!-- Modal 2: Podo Market -->
         <article data-id="2" class="projectModal hidden ">
           <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4" aria-modal="true">
         
@@ -528,9 +534,9 @@
         
                 <!-- Modal Title -->
                 <h2 class="text-xl md:text-2xl font-bold flex items-center">
-                  Podo Market
+                  Podo Market 
                   <span class="text-sm font-normal text-gray-500 ml-2 border px-2 py-0.5 rounded">
-                    Portfolio Project 2
+                    Portfolio Projekt 2
                   </span>
                 </h2>
         
@@ -545,55 +551,66 @@
         
                 <!-- Demo Video (Desktop only) -->
                 <div class="mb-6 max-w-4xl hidden md:flex justify-center">
-                  <video src="./src/static/media/pf2/pf2_live_demo.mp4" autoplay muted loop playsinline
+                  <video src="../src/static/media/pf2/pf2_live_demo.mp4" autoplay muted loop playsinline
                     class="w-[700px] h-[400px] object-cover rounded-lg">
                   </video>
                 </div>
         
                 <!-- Mobile-only message -->
                 <p class="text-sm text-gray-500 md:hidden mb-4">
-                  ▶ Demo video is available on desktop version only.
+                  ▶ Das Demo-Video ist nur auf der Desktop-Version verfügbar.
                 </p>
         
                 <!--Modal Poject Description -->
                 <div class="prose dark:prose-invert max-w-none">
                   <p>
-                    <strong>Podo Market</strong> is a second-hand marketplace built with
-                    <strong>Python, Flask, JavaScript and TailwindCSS</strong>
-                    that lets users sign up with email, verify their account, complete a profile and post items for sale.
-                    Its backend integrates a <span class="text-mainBlue">custom User model, django-allauth and profile-aware middleware</span> 
-                    to enforce authentication and profile completion before users can fully use the site.
+                    <strong>Podo Market</strong> ist ein Online-Marktplatz für Gebrauchtwaren, 
+                    der mit <strong>Python, Django, JavaScript und TailwindCSS</strong>
+                    entwickelt wurde. Er ermöglicht es Benutzern, sich per E-Mail zu registrieren, ihr Konto zu verifizieren,
+                    ein Profil zu vervollständigen und Artikel zum Verkauf anzubieten. 
+                    Das Backend integriert ein
+                    <span class="text-mainBlue"> 
+                      benutzerdefiniertes User-Modell, django-allauth und eine profilabhängige Middleware
+                    </span>, 
+                    um die Authentifizierung und Profilvervollständigung zu erzwingen, 
+                    bevor die Benutzer die Seite uneingeschränkt nutzen können.
                   </p>
         
                   <ul class="list-disc list-inside space-y-1">
                     <li>
-                      <strong>Email-based authentication</strong>
-                      with a custom User model and django-allauth (including social login)
+                      <strong>E-Mail-basierte Authentifizierung</strong>
+                      unter Verwendung eines benutzerdefinierten User-Modells und django-allauth (inklusive Social Login).
                     </li>
                     <li>
-                      <strong>Email verification gate</strong>
-                      before item creation, with customized confirmation and reset flows
+                      <strong>E-Mail-Verifizierung als Voraussetzung</strong> 
+                      für das Erstellen von Artikeln, mit angepassten
+                      Abläufen für Bestätigung und Passwort-Reset.
                     </li>
                     <li>
-                      <strong>Profile setup & edit flow</strong>
-                      (avatar, nickname, address, city/state, intro)
+                      <strong>Workflow zur Einrichtung & Bearbeitung des Profils</strong>
+                      (Avatar, Benutzername, Adresse, Stadt/Bundesland, Kurzbeschreibung).
                     </li>
                     <li>
-                      <strong>Item management CRUD</strong>
-                      with (SALE / SOLD) toggle and sold items hidden on the main index
+                      <strong>CRUD-Funktionalität für die Artikelverwaltung</strong>
+                      mit einer Status-Umschaltung(SALE / SOLD) und 
+                      verkaufte Artikel werden auf der Hauptübersicht ausgeblendet.
                     </li>
                     <li>
-                      <strong>Profile-required middleware</strong> 
-                      that redirects users with incomplete profiles to a setup page
+                      <strong>Middleware zur Erzwingung der Profilvervollständigung</strong>, 
+                      die Benutzer mit unvollständigen Profilen automatisch zur Einrichtungsseite weiterleitet.
                     </li>
                     <li>
-                      Tailwind-based <strong>responsive UI</strong> 
-                      for auth, profile and item pages, optimized for mobile and desktop
+                      Tailwind-basierte <strong>responsive UI</strong> 
+                      für Authentifizierungs-, Profil- und Artikelseiten,
+                      optimiert für Mobile und Desktop.
                     </li>
                   </ul>
         
                   <p class="mt-4">
-                    Deployment is automated using <strong>Docker</strong> and <strong>Railway</strong>.
+                    Das Deployment erfolgt mit 
+                    <strong>Docker</strong>, <strong>Gunicorn</strong>, und <strong>Railway</strong>,
+                    wobei Umgebungsvariablen für die Konfiguration von Secrets, E-Mails sowie statischen und 
+                    Media-Dateien genutztwerden.
                   </p>
                 </div>
               </div>
@@ -612,12 +629,11 @@
           <div class="absolute inset-0 z-10 bg-white/40 dark:bg-black/40 backdrop-blur-sm flex items-center justify-center">
             <span class="text-gray-800 dark:text-white text-xl font-semibold">🚧 In Progress</span>
           </div>
-        
+
           <div class="px-4 py-6">
             <h3 class="text-2xl font-bold mb-8 text-gray-800 dark:text-gray-100">
               Project-name
             </h3>
-
             <div class="flex flex-wrap gap-5 md:gap-3">
               <span
                 class="text-sm font-semibold px-2 py-1 rounded bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300">
@@ -636,7 +652,7 @@
                 TailwindCSS
               </span>
             </div>
-        
+
             <div class="space-x-6 md:space-x-4 mt-10 flex justify-start">
 
               <!-- Description Modal Button -->
@@ -670,16 +686,17 @@
           <img class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
             src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=600"
             alt="project-name">
-        
+
           <!-- Overlay layer for indicating that the project is not yet completed -->
           <div class="absolute inset-0 z-10 bg-white/40 dark:bg-black/40 backdrop-blur-sm flex items-center justify-center">
             <span class="text-gray-800 dark:text-white text-xl font-semibold">🚧 In Progress</span>
           </div>
-        
+
           <div class="px-4 py-6">
             <h3 class="text-2xl font-bold mb-8 text-gray-800 dark:text-gray-100">
               Project-name
             </h3>
+
             <div class="flex flex-wrap gap-5 md:gap-3">
               <span
                 class="text-sm font-semibold px-2 py-1 rounded bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300">
@@ -698,7 +715,7 @@
                 TailwindCSS
               </span>
             </div>
-        
+
             <div class="space-x-6 md:space-x-4 mt-10 flex justify-start">
 
               <!-- Description Modal Button -->
@@ -731,86 +748,78 @@
 
     <!-- Contact Section -->
     <section id="contact" class="mb-24 scroll-mt-24">
-      <h2 class="text-3xl uppercase font-bold mb-10 md:mb-8 border-l-4 border-mainBlue pl-4">
-        Contact
-      </h2>
+      <h2 class="text-3xl uppercase font-bold mb-10 md:mb-8 border-l-4 border-mainBlue pl-4">Contact</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-
+    
         <!-- Contact Form (desktop only; hidden on mobile) -->
-        <form id="contactForm" class="hidden md:block bg-gray-100 dark:bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 space-y-4">
-          
+        <form id="contactForm"
+          class="hidden md:block bg-gray-100 dark:bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 space-y-4">
+    
           <!-- Email Input -->
           <div>
             <label for="name" class="block mb-1 font-medium text-gray-700 dark:text-gray-300">
               Name
             </label>
             <input type="text" id="name" name="name" autocomplete="off" required
-              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-mainBlue bg-white dark:bg-gray-700 dark:border-gray-600 dark:text-white transition-colors" 
-              placeholder="Your Name">
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-mainBlue bg-white dark:bg-gray-700 dark:border-gray-600 dark:text-white transition-colors"
+              placeholder="Ihr Name">
           </div>
-          
+    
           <!-- Email Input -->
           <div>
             <label for="email" class="block mb-1 font-medium text-gray-700 dark:text-gray-300">
-              E-mail
+              E-Mail
             </label>
             <input type="email" id="email" name="email" autocomplete="off" required
               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-mainBlue bg-white dark:bg-gray-700 dark:border-gray-600 dark:text-white transition-colors"
-              placeholder="Your@email.com">
+              placeholder="Ihre@email.com">
           </div>
-
+    
           <!-- Message Textarea -->
           <div>
             <label for="content" class="block mb-1 font-medium text-gray-700 dark:text-gray-300">
-              Message
+              Nachricht
             </label>
             <textarea type="text" id="content" rows="4" name="content" autocomplete="off" required
               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-mainBlue bg-white dark:bg-gray-700 dark:border-gray-600 dark:text-white transition-colors"
-              placeholder="Your massage"></textarea>
+              placeholder="Ihre Nachricht"></textarea>
           </div>
-
+    
           <!-- Form Buttons -->
           <div class="flex justify-end pt-2">
             <button type="submit"
               class="bg-mainBlue hover:bg-blue-600 text-white font-medium px-6 py-2 transition-colors rounded-lg shadow-md cursor-pointer flex items-center">
-              <i class="fas fa-paper-plane mr-2"></i>
-              Send
-            </button>
+              <i class="fas fa-paper-plane mr-2"></i> 
+              Senden
           </div>
         </form>
-
+    
         <!-- Contact links (Social Icons) -->
         <div class="flex flex-row md:flex-col justify-center md:space-y-6 md:mx-auto">
-
+    
           <!-- GitHub Link -->
           <a href="https://github.com/MyeonggyunPark" target="_blank"
             class="w-full text-[#181717] dark:text-[#E6EDF3] text-4xl md:text-2xl flex justify-center items-center md:justify-start md:px-6 md:py-3 md:bg-gray-100 md:dark:bg-gray-800 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
             <i class="fab fa-github"></i>
-            <span class="hidden md:block text-lg text-gray-700 dark:text-gray-300 p-2 font-semibold">
-              GitHub
-            </span>
+            <span class="hidden md:block text-lg text-gray-700 dark:text-gray-300 p-2 font-semibold">GitHub</span>
           </a>
-
+    
           <!-- LinkedIn Link -->
-          <a href="https://www.linkedin.com/in/myeonggyun-park-58302b14b/" 
-            target="_blank" 
+          <a href="https://www.linkedin.com/in/myeonggyun-park-58302b14b/" target="_blank"
             class="w-full text-[#0A66C2] dark:text-gray-300 text-4xl md:text-2xl flex justify-center items-center md:justify-start md:px-6 md:py-3 md:bg-gray-100 md:dark:bg-gray-800 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
             <i class="fab fa-linkedin"></i>
-            <span class="hidden md:block text-lg text-gray-700 dark:text-gray-300 p-2 font-semibold">
-              LinkedIn
-            </span>
+            <span class="hidden md:block text-lg text-gray-700 dark:text-gray-300 p-2 font-semibold">LinkedIn</span>
           </a>
-
+    
           <!-- Email Link -->
-          <a href="mailto:audrbs92@gmail.com" 
+          <a href="mailto:audrbs92@gmail.com"
             class="w-full text-red-500 dark:text-gray-300 text-4xl md:text-2xl flex justify-center items-center md:justify-start md:px-6 md:py-3 md:bg-gray-100 md:dark:bg-gray-800 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
             <i class="fas fa-envelope"></i>
-            <span class="hidden md:block text-lg text-gray-700 dark:text-gray-300 p-2 font-semibold">
-              audrbs92@gmail.com
-            </span>
+            <span
+              class="hidden md:block text-lg text-gray-700 dark:text-gray-300 p-2 font-semibold">audrbs92@gmail.com</span>
           </a>
         </div>
-
+    
       </div>
     </section>
   </main>
@@ -818,7 +827,7 @@
   <!-- Footer -->
   <footer class="bg-gray-100 dark:bg-gray-800 py-6">
     <div class="container max-w-4xl mx-auto px-6 text-center">
-      <p>&copy; 2025 Myeonggyun Park. All rights reserved.</p>
+      <p>&copy; 2025 Myeonggyun Park. Rechte vorbehalten.</p>
     </div>
   </footer>
 
