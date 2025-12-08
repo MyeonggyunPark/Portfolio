@@ -564,53 +564,40 @@
                 <!--Modal Poject Description -->
                 <div class="prose dark:prose-invert max-w-none">
                   <p>
-                    <strong>Podo Market</strong> ist ein Online-Marktplatz für Gebrauchtwaren, 
-                    der mit <strong>Python, Django, JavaScript und TailwindCSS</strong>
-                    entwickelt wurde. Er ermöglicht es Benutzern, sich per E-Mail zu registrieren, ihr Konto zu verifizieren,
-                    ein Profil zu vervollständigen und Artikel zum Verkauf anzubieten. 
-                    Das Backend integriert ein
-                    <span class="text-mainBlue"> 
-                      benutzerdefiniertes User-Modell, django-allauth und eine profilabhängige Middleware
-                    </span>, 
-                    um die Authentifizierung und Profilvervollständigung zu erzwingen, 
-                    bevor die Benutzer die Seite uneingeschränkt nutzen können.
+                    <strong>Podo Market</strong> ist ein voll funktionsfähiger Online-Marktplatz, entwickelt mit
+                    <strong>Python, Django, JavaScript und TailwindCSS</strong>.
+                    Das Projekt geht über einfaches CRUD hinaus und implementiert <span class="text-mainBlue">moderne UX-Funktionen wie AJAX-Interaktionen und In-Place-Editing</span>, ohne auf schwere Frontend-Frameworks angewiesen zu sein.
                   </p>
-        
+
                   <ul class="list-disc list-inside space-y-1">
                     <li>
-                      <strong>E-Mail-basierte Authentifizierung</strong>
-                      unter Verwendung eines benutzerdefinierten User-Modells und django-allauth (inklusive Social Login).
+                      <strong>Interaktionssystem</strong>: 
+                      AJAX-basiertes <strong>Like</strong>-Toggle & <strong>Kommentar</strong>-System mit In-Place-Bearbeitung (ohne Neuladen der Seite).
                     </li>
                     <li>
-                      <strong>E-Mail-Verifizierung als Voraussetzung</strong> 
-                      für das Erstellen von Artikeln, mit angepassten
-                      Abläufen für Bestätigung und Passwort-Reset.
+                      <strong>Erweiterte Suche</strong>: 
+                      Filterung von Artikeln nach Titel/Inhalt mit clientseitiger Validierung.
                     </li>
                     <li>
-                      <strong>Workflow zur Einrichtung & Bearbeitung des Profils</strong>
-                      (Avatar, Benutzername, Adresse, Stadt/Bundesland, Kurzbeschreibung).
+                      <strong>Profil-Dashboard</strong>: 
+                      Tab-UI für [Anzeigen], [Likes] und [Kommentare] mit Datenduplizierungsschutz.
                     </li>
                     <li>
-                      <strong>CRUD-Funktionalität für die Artikelverwaltung</strong>
-                      mit einer Status-Umschaltung(SALE / SOLD) und 
-                      verkaufte Artikel werden auf der Hauptübersicht ausgeblendet.
+                      <strong>Skalierbare Architektur</strong>: 
+                      Verwendung von <strong>GenericForeignKey</strong> zur Erweiterung von 'Likes' auf beliebige Inhaltstypen.
                     </li>
                     <li>
-                      <strong>Middleware zur Erzwingung der Profilvervollständigung</strong>, 
-                      die Benutzer mit unvollständigen Profilen automatisch zur Einrichtungsseite weiterleitet.
+                      <strong>Robuste Authentifizierung</strong>: 
+                      E-Mail-Verifizierung, Social Login (Allauth) und Profil-Zwang-Middleware.
                     </li>
                     <li>
-                      Tailwind-basierte <strong>responsive UI</strong> 
-                      für Authentifizierungs-, Profil- und Artikelseiten,
-                      optimiert für Mobile und Desktop.
+                      <strong>Responsives Design</strong>: 
+                      Mobile-First-Ansatz mit Tailwind CSS.
                     </li>
                   </ul>
-        
+
                   <p class="mt-4">
-                    Das Deployment erfolgt mit 
-                    <strong>Docker</strong>, <strong>Gunicorn</strong>, und <strong>Railway</strong>,
-                    wobei Umgebungsvariablen für die Konfiguration von Secrets, E-Mails sowie statischen und 
-                    Media-Dateien genutztwerden.
+                    Das Deployment ist mit <strong>Docker</strong> und <strong>Railway</strong> automatisiert.
                   </p>
                 </div>
               </div>

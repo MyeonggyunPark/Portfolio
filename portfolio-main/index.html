@@ -558,40 +558,38 @@
                 <!--Modal Poject Description -->
                 <div class="prose dark:prose-invert max-w-none">
                   <p>
-                    <strong>Podo Market</strong> is a second-hand marketplace built with
-                    <strong>Python, Flask, JavaScript and TailwindCSS</strong>
-                    that lets users sign up with email, verify their account, complete a profile and post items for sale.
-                    Its backend integrates a <span class="text-mainBlue">custom User model, django-allauth and profile-aware middleware</span> 
-                    to enforce authentication and profile completion before users can fully use the site.
+                    <strong>Podo Market</strong> is a fully featured second-hand marketplace built with
+                    <strong>Python, Django, JavaScript and TailwindCSS</strong>.
+                    It goes beyond basic CRUD by implementing <span class="text-mainBlue">modern UX features like AJAX interactions and In-Place Editing</span> without relying on heavy frontend frameworks.
                   </p>
-        
+
                   <ul class="list-disc list-inside space-y-1">
                     <li>
-                      <strong>Email-based authentication</strong>
-                      with a custom User model and django-allauth (including social login)
+                      <strong>Interaction System</strong>: 
+                      AJAX-powered <strong>Like</strong> toggle & <strong>Comment</strong> system with In-Place Editing (no page reload).
                     </li>
                     <li>
-                      <strong>Email verification gate</strong>
-                      before item creation, with customized confirmation and reset flows
+                      <strong>Advanced Search</strong>: 
+                      Filter items by title/content with client-side validation.
                     </li>
                     <li>
-                      <strong>Profile setup & edit flow</strong>
-                      (avatar, nickname, address, city/state, intro)
+                      <strong>Profile Dashboard</strong>: 
+                      Tabbed UI for [Listings], [Likes], and [Comments] with data deduplication.
                     </li>
                     <li>
-                      <strong>Item management CRUD</strong>
-                      with (SALE / SOLD) toggle and sold items hidden on the main index
+                      <strong>Scalable Architecture</strong>: 
+                      Uses <strong>GenericForeignKey</strong> to extend 'Likes' to any content type.
                     </li>
                     <li>
-                      <strong>Profile-required middleware</strong> 
-                      that redirects users with incomplete profiles to a setup page
+                      <strong>Robust Auth</strong>: 
+                      Email verification gate, Social Login (Allauth), and Profile-required middleware.
                     </li>
                     <li>
-                      Tailwind-based <strong>responsive UI</strong> 
-                      for auth, profile and item pages, optimized for mobile and desktop
+                      <strong>Responsive UI</strong>: 
+                      Mobile-first design using Tailwind CSS.
                     </li>
                   </ul>
-        
+
                   <p class="mt-4">
                     Deployment is automated using <strong>Docker</strong> and <strong>Railway</strong>.
                   </p>
