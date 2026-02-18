@@ -33,6 +33,7 @@ Each project is stored in its own folder with source code, documentation, and pr
 |:------:|:---------:|:------------:|:------------:|:-----------:|
 | ✅ | 12.11.2025 | Dev Job Scraper | Python / Flask / TailwindCSS | https://github.com/MyeonggyunPark/pf1_scraper |
 | ✅ | 24.11.2025 | Podo Marktet | Python / Django / TailwindCSS | https://github.com/MyeonggyunPark/pf2_market |
+| ✅ | 18.02.2026 | MS Planer | Python / Django / React /TailwindCSS | https://github.com/MyeonggyunPark/pf3_manager |
 
 
 ## 🎯 Purpose of This Repository
