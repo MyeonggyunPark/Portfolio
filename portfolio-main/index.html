@@ -219,7 +219,7 @@
           </ul>
           <div class="flex justify-end mt-auto">
             <a href="./src/lebenslauf.html" target="_blank"
-              class="bg-mainBlue hover:bg-blue-600 text-white px-3 py-1 rounded transition-colors">
+              class="bg-mainBlue hover:bg-[#0EA5E9] text-white dark:bg-[#0EA5E9] dark:hover:bg-mainBlue dark:text-white px-3 py-1 rounded transition">
               More
             </a>
           </div>
@@ -263,7 +263,7 @@
           </ul>
           <div class="flex justify-end mt-5">
             <a href="./src/anschreiben.html" target="_blank"
-              class="bg-mainBlue hover:bg-blue-600 text-white px-3 py-1 rounded transition-colors">
+              class="bg-mainBlue hover:bg-[#0EA5E9] text-white dark:bg-[#0EA5E9] dark:hover:bg-mainBlue dark:text-white px-3 py-1 rounded transition">
               More
             </a>
           </div>
@@ -390,7 +390,7 @@
                 </h2>
         
                 <!-- Close Button -->
-                <button class="closeModalBtn text-gray-500 hover:text-mainBlue text-4xl transition-colors pb-2">
+                <button class="closeModalBtn text-gray-500 hover:text-mainBlue text-4xl transition-colors pb-2 cursor-pointer">
                   &times;
                 </button>
               </div>
@@ -401,7 +401,7 @@
                 <!-- Demo Video (Desktop only) -->
                 <div class="mb-6 max-w-4xl hidden md:flex justify-center">
                   <video src="./src/static/media/pf1/pf1_live_demo.mp4" autoplay muted loop playsinline
-                    class="w-[700px] h-[400px] object-cover rounded-lg">
+                    class="w-175 h-100 object-cover rounded-lg">
                   </video>
                 </div>
         
@@ -535,7 +535,7 @@
                 </h2>
         
                 <!-- Close Button -->
-                <button class="closeModalBtn text-gray-500 hover:text-mainBlue text-4xl transition-colors pb-2">
+                <button class="closeModalBtn text-gray-500 hover:text-mainBlue text-4xl transition-colors pb-2 cursor-pointer">
                   &times;
                 </button>
               </div>
@@ -546,7 +546,7 @@
                 <!-- Demo Video (Desktop only) -->
                 <div class="mb-6 max-w-4xl hidden md:flex justify-center">
                   <video src="./src/static/media/pf2/pf2_live_demo.mp4" autoplay muted loop playsinline
-                    class="w-[700px] h-[400px] object-cover rounded-lg">
+                    class="w-175 h-100 object-cover rounded-lg">
                   </video>
                 </div>
         
@@ -599,21 +599,16 @@
           </div>
         </article>
 
-        <!-- Project 3: Name -->
+        <!-- Project 3: MS Planer -->
         <article
-          class="relative group bg-gray-100 dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg border border-gray-200 dark:border-gray-700">
+          class="group bg-gray-100 dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg border border-gray-200 dark:border-gray-700">
           <img class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
-            src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=600"
-            alt="project-name">
-
-          <!-- Overlay layer for indicating that the project is not yet completed -->
-          <div class="absolute inset-0 z-10 bg-white/40 dark:bg-black/40 backdrop-blur-sm flex items-center justify-center">
-            <span class="text-gray-800 dark:text-white text-xl font-semibold">🚧 In Progress</span>
-          </div>
+            src="./src/static/media/pf3/pf3_manager_logo.png"
+            alt="MS Planer">
         
           <div class="px-4 py-6">
             <h3 class="text-2xl font-bold mb-8 text-gray-800 dark:text-gray-100">
-              Project-name
+              MS Planer
             </h3>
 
             <div class="flex flex-wrap gap-5 md:gap-3">
@@ -626,8 +621,8 @@
                 Django
               </span>
               <span
-                class="text-sm font-semibold px-2 py-1 rounded bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300">
-                JavaScript
+                class="text-sm font-semibold px-2 py-1 rounded bg-[#E6F9FF] dark:bg-[#61DAFB]/20 text-[#0B7285] dark:text-[#61DAFB]">
+                React
               </span>
               <span
                 class="text-sm font-semibold px-2 py-1 rounded bg-teal-100 dark:bg-teal-900/30 text-teal-700 dark:text-teal-300">
@@ -645,19 +640,106 @@
               </button>
 
               <!-- GitHub Button -->
-              <a href="https://github.com/MyeonggyunPark/pf2_market" target="_blank"
+              <a href="https://github.com/MyeonggyunPark/pf3_manager" target="_blank"
                 class="text-gray-600 dark:text-gray-300 hover:text-mainBlue hover:border-mainBlue font-medium border border-gray-600 dark:border-gray-300 rounded-md transition-colors px-3 py-2 md:py-1 flex items-center text-2xl md:text-base">
                 <i class="fab fa-github mr-0 md:mr-1"></i>
                 <span class="hidden md:block">GitHub</span>
               </a>
 
               <!-- Live Demo Button -->
-              <a href="https://podo-market.up.railway.app/" target="_blank"
+              <a href="https://www.ms-planer.de" target="_blank"
                 class="text-gray-600 dark:text-gray-300 hover:text-mainBlue hover:border-mainBlue font-medium border border-gray-600 dark:border-gray-300 rounded-md transition-colors px-3 py-2 md:py-1 flex items-center text-2xl md:text-base">
                 <i class="fas fa-external-link-alt mr-0 md:mr-1"></i>
                 <span class="hidden md:block">Live Demo</span>
               </a>
 
+            </div>
+          </div>
+        </article>
+
+        <!-- Modal 3: MS Planer -->
+        <article data-id="3" class="projectModal hidden ">
+          <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4" aria-modal="true">
+        
+            <div
+              class="bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100 p-0 rounded-xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-hidden flex flex-col relative animate-fade-in-up">
+        
+              <!-- Modal Navbar -->
+              <div class="p-4 md:px-6 md:py-4 flex justify-between items-center bg-gray-200 dark:bg-gray-900">
+        
+                <!-- Modal Title -->
+                <h2 class="text-xl md:text-2xl font-bold flex items-center">
+                  MS Planer
+                  <span class="text-sm font-normal text-gray-500 ml-2 border px-2 py-0.5 rounded">
+                    Portfolio Project 3
+                  </span>
+                </h2>
+        
+                <!-- Close Button -->
+                <button class="closeModalBtn text-gray-500 hover:text-mainBlue text-4xl transition-colors pb-2 cursor-pointer">
+                  &times;
+                </button>
+              </div>
+        
+              <!-- Modal Main Section -->
+              <div class="overflow-y-auto p-4 md:p-6">
+        
+                <!-- Demo Video (Desktop only) -->
+                <div class="mb-6 max-w-4xl hidden md:flex justify-center">
+                  <video src="./src/static/media/pf3/pf3_live_demo.mp4" autoplay muted loop playsinline
+                    class="w-175 h-100 object-cover rounded-lg">
+                  </video>
+                </div>
+        
+                <!-- Mobile-only message -->
+                <p class="text-sm text-gray-500 md:hidden mb-4">
+                  ▶ Demo video is available on desktop version only.
+                </p>
+        
+                <!--Modal Poject Description -->
+                <div class="prose dark:prose-invert max-w-none">
+                  <p>
+                    <strong>MS Planer</strong> is a full-stack tutor operations platform built with
+                    <strong>Python, Django, React (Vite), and TailwindCSS</strong>.
+                    It covers the full tutoring workflow and combines <span class="text-mainBlue">student/course/schedule/exam/todo/invoice management in one integrated system</span>.
+                  </p>
+
+                  <ul class="list-disc list-inside space-y-1">
+                    <li>
+                      <strong>Core Operations</strong>: 
+                      End-to-end management for students, courses, lessons, mock/official exams, and todos with practical dashboard views.
+                    </li>
+                    <li>
+                      <strong>Invoice Workflow</strong>: 
+                      Invoice creation with line items, PDF export, unpaid highlighting, and unsent-notification sync.
+                    </li>
+                    <li>
+                      <strong>Auth & Account</strong>: 
+                      JWT cookie auth, email verification/reset flow, and social login integration (Google/Kakao).
+                    </li>
+                    <li>
+                      <strong>Internationalization</strong>: 
+                      Frontend and backend i18n support with German/Korean UI, translated messages, and localized email templates.
+                    </li>
+                    <li>
+                      <strong>Performance Tuning</strong>: 
+                      Lazy tab loading and optimized querysets (`select_related`/`prefetch_related`) to reduce heavy-page load cost.
+                    </li>
+                    <li>
+                      <strong>Production Readiness</strong>: 
+                      Containerized setup with stable deployment configuration and responsive UI across desktop/mobile.
+                    </li>
+                    <li>
+                      <strong>UI/UX Focus</strong>: 
+                      The interface is responsive, but the overall UI/UX is optimized primarily for laptop and desktop screens.
+                    </li>
+                  </ul>
+
+                  <p class="mt-4">
+                    Deployment is automated using <strong>Docker</strong>, <strong>Gunicorn</strong>, and <strong>Railway</strong>.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </article>
@@ -770,7 +852,7 @@
           <!-- Form Buttons -->
           <div class="flex justify-end pt-2">
             <button type="submit"
-              class="bg-mainBlue hover:bg-blue-600 text-white font-medium px-6 py-2 transition-colors rounded-lg shadow-md cursor-pointer flex items-center">
+              class="bg-mainBlue hover:bg-[#0EA5E9] text-white dark:bg-[#0EA5E9] dark:hover:bg-mainBlue dark:text-white font-medium px-6 py-2 transition-colors rounded-lg shadow-md cursor-pointer flex items-center">
               <i class="fas fa-paper-plane mr-2"></i>
               Send
             </button>
